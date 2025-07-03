@@ -10,7 +10,7 @@
 
 The following diagram illustrates the overall architecture of the Code Semantic Search system, including the flow between the user interface, LLM services, Azure AI Search, Cosmos DB, and caching layers for both search and recommendation functionalities.
 
-![Architecture Diagram](./architecture.png)
+![Architecture Diagram](Code-search-Pipeline.png)
 
 ---
 
