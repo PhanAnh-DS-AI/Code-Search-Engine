@@ -1,0 +1,78 @@
+[
+  {
+    "repository": "my-awesome-project",
+    "branches": [
+      {
+        "branch_name": "develop",
+        "tags": ["latest", "unstable", "nightly"],
+        "last_commit": "f2c123d",
+        "author": "alice",
+        "created_at": "2024-11-01T09:00:00Z"
+      },
+      {
+        "branch_name": "release/v2.0.0",
+        "tags": ["rc", "v2.0.0-rc1"],
+        "last_commit": "bb23fa1",
+        "author": "carol",
+        "created_at": "2025-01-10T08:30:00Z"
+      }
+    ]
+  },
+  {
+    "repository": "semantic-search-engine",
+    "branches": [
+      {
+        "branch_name": "main",
+        "tags": ["stable", "production"],
+        "last_commit": "ab1122a",
+        "author": "david",
+        "created_at": "2025-02-10T10:00:00Z"
+      },
+      {
+        "branch_name": "feature/embedding-service",
+        "tags": ["wip", "experimental"],
+        "last_commit": "ff00bb1",
+        "author": "emma",
+        "created_at": "2025-03-01T15:20:00Z"
+      }
+    ]
+  },
+  {
+    "repository": "user-auth-service",
+    "branches": [
+      {
+        "branch_name": "develop",
+        "tags": ["unstable"],
+        "last_commit": "ddee998",
+        "author": "frank",
+        "created_at": "2025-01-05T09:30:00Z"
+      },
+      {
+        "branch_name": "hotfix/login-timeout",
+        "tags": ["patch", "urgent"],
+        "last_commit": "bbee665",
+        "author": "grace",
+        "created_at": "2025-04-02T08:10:00Z"
+      }
+    ]
+  },
+  {
+    "repository": "admin-dashboard",
+    "branches": [
+      {
+        "branch_name": "main",
+        "tags": ["stable", "dashboard"],
+        "last_commit": "ccdd774",
+        "author": "henry",
+        "created_at": "2024-10-10T12:45:00Z"
+      },
+      {
+        "branch_name": "feature/dark-mode",
+        "tags": ["ui", "in-progress"],
+        "last_commit": "9988aac",
+        "author": "iris",
+        "created_at": "2025-03-22T16:35:00Z"
+      }
+    ]
+  }
+]

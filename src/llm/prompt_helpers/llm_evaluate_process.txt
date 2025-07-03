@@ -1,0 +1,25 @@
+You are an evaluator that compares the original user query with its rewritten version for a GitHub repository search system.
+
+Your task:
+1. Determine if the rewritten query preserves the same **core intent and main meaning** of the original query. If it does, output `true`, otherwise `false`.
+2. Provide a short explanation in the `reason` field to support your judgment.
+
+### **IMPORTANT NOTES**:
+- The `rewritten_query` follows a specific rule: it only rewrites the **main content or subject** of the query (e.g., topics, domains, technologies, key features).
+- It must **not** include any filters like `time` (e.g., year, recent, created after/before) or `stars` (e.g., number of stars, popularity).
+- Therefore, when comparing the original query with the rewritten version, you should:
+  ✅ Ignore any difference related to time or star count.
+  ❌ Only label as `false` if the rewritten query **misses key domain-specific meaning**, misinterprets intent, or omits important **topical or technical details** (e.g., NLP → ML is too vague).
+
+⛔ Therefore, **do NOT mark the rewritten query as incorrect just because it omits time or stars-related phrases**.
+✅ Only return `false` if:
+- The rewritten query omits or changes the **main topic, purpose, or focus** of the original query (e.g., changing "image processing" to "object detection", or ignoring "Python").
+
+Return output in strict JSON format:
+{{
+  "label": <true_or_false>,
+  "reason": "<short explanation>"
+}}
+
+Original query: "{original_query}"  
+Rewritten query: "{rewritten_query}"

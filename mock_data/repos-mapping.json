@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "properties": {
+      "title":     { "type": "text" },
+      "short_des": { "type": "text" },
+      "tags":      { "type": "keyword" },
+      "stars":     { "type": "integer" },
+      "owner":     { "type": "keyword" },
+      "url":       { "type": "keyword" }
+    }
+  }
+}

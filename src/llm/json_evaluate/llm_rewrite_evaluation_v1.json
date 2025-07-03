@@ -1,0 +1,2188 @@
+[
+  {
+    "id": 1,
+    "original_query": "Beginner-friendly AI projects written in Python, created after 2021",
+    "rewritten_query": "beginner ai projects in python",
+    "true_label": false,
+    "llm_thinking": "The rewritten query does not keep the same intent and meaning as the original query. The original query specifically asks for projects created after 2021, which is missing in the rewritten query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "python"
+        ],
+        "created_after": "2021-01-01",
+        "topics": [
+          "beginner",
+          "ai"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "beginner ai projects in python"
+    }
+  },
+  {
+    "id": 2,
+    "original_query": "Popular Python repositories about AI with over 1000 stars",
+    "rewritten_query": "python repositories about ai",
+    "true_label": false,
+    "llm_thinking": "The rewritten query lacks the intent to filter repositories by their star count, which was a crucial part of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 1000,
+        "topics": [
+          "ai"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "python repositories about ai"
+    }
+  },
+  {
+    "id": 3,
+    "original_query": "Any image processing libraries in Python with more than 500 stars?",
+    "rewritten_query": "image processing libraries in Python",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent to filter libraries by their star count, which was a key part of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "image processing"
+        ],
+        "stars_min": 500
+      },
+      "query_vector_required": false,
+      "rewritten_query": "image processing libraries in Python"
+    }
+  },
+  {
+    "id": 4,
+    "original_query": "Transformer-based chatbot project updated after 2023",
+    "rewritten_query": "transformer-based chatbot project",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent and meaning of the original query as it does not include the time constraint 'after 2023', which is crucial to filter the search results.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "transformer"
+        ],
+        "created_after": "2023-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "chatbot"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "transformer-based chatbot project"
+    }
+  },
+  {
+    "id": 5,
+    "original_query": "Machine learning repositories using PyTorch since 2020",
+    "rewritten_query": "machine learning repositories using pytorch",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent of searching for repositories since 2020, as the original query includes a time constraint that is not present in the rewritten query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "pytorch",
+        "libraries": [
+          "pytorch"
+        ],
+        "created_after": "2020-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "machine learning"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "machine learning repositories using pytorch"
+    }
+  },
+  {
+    "id": 6,
+    "original_query": "Popular React component libraries with more than 2000 stars",
+    "rewritten_query": "popular react component libraries",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent of filtering by the number of stars (> 2000), making it a less specific search compared to the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "null",
+        "libraries": [
+          "react"
+        ],
+        "created_after": "null",
+        "created_before": "null",
+        "stars_min": 2000,
+        "topics": [
+          "null"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "popular react component libraries"
+    }
+  },
+  {
+    "id": 7,
+    "original_query": "Top-starred data visualization repositories, over 1000 stars",
+    "rewritten_query": "data visualization",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent of filtering by the number of stars (over 1000) and the specific ranking of top-starred repositories, making it a less specific and less relevant search.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 1000,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "data visualization"
+    }
+  },
+  {
+    "id": 8,
+    "original_query": "NLP libraries with at least 500 stars and recent updates",
+    "rewritten_query": "nlp libraries",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent and meaning of the original query, which specifically asks for NLP libraries with at least 500 stars and recent updates. The rewritten query is too vague and does not include any filters.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "nlp"
+        ],
+        "created_after": "2025-03-13",
+        "created_before": "2025-06-11",
+        "stars_min": 500,
+        "topics": [
+          "nlp"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "nlp libraries"
+    }
+  },
+  {
+    "id": 9,
+    "original_query": "AI projects updated within the last 6 months",
+    "rewritten_query": "ai projects",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent of filtering projects based on their update date, which is present in the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": "2024-12-11",
+        "created_before": null,
+        "stars_min": null,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "ai projects"
+    }
+  },
+  {
+    "id": 10,
+    "original_query": "Vietnamese sentiment analysis repo using Python, from 2022",
+    "rewritten_query": "vietnamese sentiment analysis",
+    "true_label": false,
+    "llm_thinking": "The rewritten query lacks specific details present in the original query, such as language (Python), time frame (from 2022), and type (repository).",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Python",
+        "libraries": [
+          "vietnamese"
+        ],
+        "created_after": "2022-01-01",
+        "topics": [
+          "sentiment analysis"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "vietnamese sentiment analysis"
+    }
+  },
+  {
+    "id": 11,
+    "original_query": "High performance computing projects in C++, created since 2021",
+    "rewritten_query": "high performance computing projects in c",
+    "true_label": false,
+    "llm_thinking": "The rewritten query changes the programming language from C++ to C, which alters the intent and meaning of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "c",
+        "libraries": [
+          "null"
+        ],
+        "created_after": "2021-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "high performance computing"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "high performance computing projects in c"
+    }
+  },
+  {
+    "id": 12,
+    "original_query": "Beginner-friendly Go repositories with fewer than 500 stars",
+    "rewritten_query": "beginner friendly Go repositories",
+    "true_label": false,
+    "llm_thinking": "The rewritten query is missing the filter criteria 'with fewer than 500 stars' which was present in the original query, thus altering its intent and meaning.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Go",
+        "stars_min": 0,
+        "topics": [
+          "beginner-friendly"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "beginner friendly Go repositories"
+    }
+  },
+  {
+    "id": 13,
+    "original_query": "Keras-based deep learning projects created after 2021",
+    "rewritten_query": "Keras-based deep learning projects",
+    "true_label": false,
+    "llm_thinking": "The rewritten query removes the date filter 'created after 2021', changing the intent and meaning of the original query, which specifically searched for projects created after 2021.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Python",
+        "libraries": [
+          "Keras"
+        ],
+        "created_after": "2021-01-01",
+        "topics": [
+          "deep learning"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Keras-based deep learning projects"
+    }
+  },
+  {
+    "id": 14,
+    "original_query": "Trending JavaScript repositories with over 2000 stars",
+    "rewritten_query": "trending javascript repositories",
+    "true_label": false,
+    "llm_thinking": "The rewritten query is missing the criteria of 'over 2000 stars', which is present in the original query, indicating a loss of intent and meaning.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "javascript",
+        "stars_min": 2000
+      },
+      "query_vector_required": false,
+      "rewritten_query": "trending javascript repositories"
+    }
+  },
+  {
+    "id": 15,
+    "original_query": "Stable Diffusion projects updated in 2024",
+    "rewritten_query": "stable diffusion projects",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent of finding projects updated in 2024, which is a specific constraint in the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "stable diffusion"
+        ],
+        "created_after": "2024-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "stable diffusion"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "stable diffusion projects"
+    }
+  },
+  {
+    "id": 16,
+    "original_query": "Web scraping tools in Python with at least 300 stars",
+    "rewritten_query": "web scraping tools in python",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent of filtering by minimum number of stars (at least 300 stars), which is an important aspect of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Python",
+        "libraries": [
+          "web scraping"
+        ],
+        "stars_min": 300,
+        "topics": [
+          "web scraping"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "web scraping tools in python"
+    }
+  },
+  {
+    "id": 17,
+    "original_query": "Real-time video processing projects in Python from 2022",
+    "rewritten_query": "real-time video processing in Python",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the specific timeframe ('from 2022') and the exactness of the search results, which were present in the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "created_after": "2022-01-01",
+        "topics": [
+          "real-time video processing"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "real-time video processing in Python"
+    }
+  },
+  {
+    "id": 18,
+    "original_query": "Open-source anomaly detection tools built with PyTorch",
+    "rewritten_query": "anomaly detection tools built with pytorch",
+    "true_label": false,
+    "llm_thinking": "The rewritten query removes the 'open-source' keyword and 'PyTorch' becomes 'pytorch' (lowercase), which may alter the search results and intent of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "pytorch",
+        "topics": [
+          "anomaly detection",
+          "open source"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "anomaly detection tools built with pytorch"
+    }
+  },
+  {
+    "id": 19,
+    "original_query": "Java repositories created in 2023",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "java",
+        "created_after": "2023-01-01",
+        "created_before": "2023-12-31"
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 20,
+    "original_query": "Image classification libraries with 2000+ stars",
+    "rewritten_query": "image classification",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the specific information about the number of stars (2000+), which is likely an important filter for the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "image classification"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 2000,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "image classification"
+    }
+  },
+  {
+    "id": 21,
+    "original_query": "Reinforcement learning tutorials using Python",
+    "rewritten_query": "reinforcement learning tutorials using python",
+    "true_label": true,
+    "llm_thinking": "The rewritten query has the same intent and meaning as the original query, with only minor changes in case, which do not affect the search results in this context.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Python",
+        "libraries": [
+          "reinforcement learning"
+        ],
+        "topics": [
+          "reinforcement learning",
+          "tutorial"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "reinforcement learning tutorials using python"
+    }
+  },
+  {
+    "id": 22,
+    "original_query": "Huggingface Transformers repositories with over 1000 stars",
+    "rewritten_query": "Hugging Face Transformers repositories",
+    "true_label": false,
+    "llm_thinking": "The rewritten query lacks the specific filter of 'over 1000 stars', which is present in the original query, indicating a difference in intent and meaning.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "null",
+        "libraries": [
+          "transformers"
+        ],
+        "created_after": "null",
+        "created_before": "null",
+        "stars_min": 1000,
+        "topics": [
+          "null"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Hugging Face Transformers repositories"
+    }
+  },
+  {
+    "id": 23,
+    "original_query": "Recommender systems written in Python and updated recently",
+    "rewritten_query": "recommender systems",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent to search for recommender systems written in Python and updated recently, as it only searches for 'recommender systems'.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "created_after": "2025-03-13",
+        "created_before": "2025-06-11"
+      },
+      "query_vector_required": false,
+      "rewritten_query": "recommender systems"
+    }
+  },
+  {
+    "id": 24,
+    "original_query": "Deep learning model optimization tools using TensorFlow",
+    "rewritten_query": "deep learning model optimization tools using tensorflow",
+    "true_label": true,
+    "llm_thinking": "The rewritten query is identical to the original query, except for the case of letters, which does not change the intent or meaning of the query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "C++",
+        "libraries": [
+          "TensorFlow"
+        ],
+        "topics": [
+          "deep learning",
+          "model optimization"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "deep learning model optimization tools using tensorflow"
+    }
+  },
+  {
+    "id": 25,
+    "original_query": "Simple Node.js chatbot with under 500 stars",
+    "rewritten_query": "node js chatbot",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent and meaning of the original query, specifically the requirement for the repository to have under 500 stars.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "nodejs",
+        "stars_min": 499,
+        "topics": [
+          "chatbot"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "node js chatbot"
+    }
+  },
+  {
+    "id": 26,
+    "original_query": "Japanese language processing libraries in Python",
+    "rewritten_query": "Japanese language processing libraries in Python",
+    "true_label": true,
+    "llm_thinking": "The rewritten query is identical to the original query, maintaining the same intent and meaning.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Python",
+        "libraries": [
+          "Japanese language processing"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "Japanese language processing"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Japanese language processing libraries in Python"
+    }
+  },
+  {
+    "id": 27,
+    "original_query": "Langchain and LlamaIndex based repositories from 2023 onward",
+    "rewritten_query": "langchain and llamaindex",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent of searching for repositories from 2023 onward, as this information is missing from the rewritten query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "langchain and llamaindex",
+        "libraries": [
+          "langchain",
+          "llamaindex"
+        ],
+        "created_after": "2023-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "langchain and llamaindex"
+    }
+  },
+  {
+    "id": 28,
+    "original_query": "Flask repositories recently updated with 300+ stars",
+    "rewritten_query": "flask repositories recently updated",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the specific information about the number of stars (300+), which is an important part of the original query's intent and meaning.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "flask",
+        "stars_min": 300,
+        "created_after": "2025-03-13",
+        "created_before": "2025-06-11"
+      },
+      "query_vector_required": false,
+      "rewritten_query": "flask repositories recently updated"
+    }
+  },
+  {
+    "id": 29,
+    "original_query": "Top AI projects for beginners, created after 2022",
+    "rewritten_query": "AI projects for beginners",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent and meaning of the original query, specifically the time constraint ('created after 2022') and the ranking requirement ('Top').",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": "2022-01-01",
+        "created_before": null,
+        "stars_min": 500,
+        "topics": [
+          "AI",
+          "beginner"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "AI projects for beginners"
+    }
+  },
+  {
+    "id": 30,
+    "original_query": "Best NLP repositories with 2000+ stars",
+    "rewritten_query": "nlp",
+    "true_label": false,
+    "llm_thinking": "The rewritten query 'nlp' lacks the specific information about the number of stars (2000+), which is present in the original query. This difference in specificity affects the intent and meaning of the search.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 2000,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "nlp"
+    }
+  },
+  {
+    "id": 31,
+    "original_query": "Build REST APIs with Go, projects from 2021 onward",
+    "rewritten_query": "rest apis with go",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent of searching for projects from 2021 onward, which is a specific time constraint present in the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Go",
+        "created_after": "2021-01-01"
+      },
+      "query_vector_required": false,
+      "rewritten_query": "rest apis with go"
+    }
+  },
+  {
+    "id": 32,
+    "original_query": "Python data scraping tools with 500+ stars",
+    "rewritten_query": "python data scraping tools",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the information about the number of stars, which is an important filter for the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "stars_min": 500,
+        "libraries": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "python data scraping tools"
+    }
+  },
+  {
+    "id": 33,
+    "original_query": "Projects fine-tuning Vietnamese language models",
+    "rewritten_query": "Vietnamese language models fine-tuning",
+    "true_label": true,
+    "llm_thinking": "The rewritten query maintains the same intent and meaning as the original query, as it conveys the same search topic (fine-tuning Vietnamese language models) but with a slightly rearranged order of words.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "C++",
+        "libraries": [
+          "llama.cpp"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "Vietnamese language models",
+          "fine-tuning"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Vietnamese language models fine-tuning"
+    }
+  },
+  {
+    "id": 34,
+    "original_query": "Text summarization repositories using Transformers",
+    "rewritten_query": "text summarization using transformers",
+    "true_label": false,
+    "llm_thinking": "The rewritten query is missing the keyword 'repositories' which is present in the original query, indicating a difference in intent and meaning.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "null",
+        "libraries": [
+          "transformers"
+        ],
+        "created_after": "null",
+        "created_before": "null",
+        "stars_min": null,
+        "topics": [
+          "transformers",
+          "text summarization"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "text summarization using transformers"
+    }
+  },
+  {
+    "id": 35,
+    "original_query": "Audio processing with deep learning using Python",
+    "rewritten_query": "audio processing with deep learning",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent to filter results by programming language (Python), which is present in the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "deep learning"
+        ],
+        "topics": [
+          "audio processing"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "audio processing with deep learning"
+    }
+  },
+  {
+    "id": 36,
+    "original_query": "Best OCR libraries with over 1000 stars",
+    "rewritten_query": "best ocr libraries",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent of filtering by the number of stars (> 1000), which is a key aspect of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "ocr"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 1000,
+        "topics": [
+          "best ocr libraries"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "best ocr libraries"
+    }
+  },
+  {
+    "id": 37,
+    "original_query": "AI deployment tutorial projects for cloud platforms",
+    "rewritten_query": "AI deployment tutorial projects for cloud platforms",
+    "true_label": true,
+    "llm_thinking": "The rewritten query is identical to the original query, indicating that it maintains the same intent and meaning.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "ai",
+          "deployment",
+          "tutorial",
+          "projects",
+          "cloud",
+          "platforms"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "AI deployment tutorial projects for cloud platforms"
+    }
+  },
+  {
+    "id": 38,
+    "original_query": "Vietnamese news crawling projects with over 200 stars",
+    "rewritten_query": "vietnamese news crawling projects",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent of finding projects with over 200 stars, which was present in the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 200,
+        "topics": [
+          "vietnamese news crawling"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "vietnamese news crawling projects"
+    }
+  },
+  {
+    "id": 39,
+    "original_query": "Machine learning with tabular data repositories",
+    "rewritten_query": "machine learning with tabular data",
+    "true_label": false,
+    "llm_thinking": "The rewritten query lacks the keyword 'repositories', which is present in the original query, indicating a difference in intent and meaning.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "machine learning",
+          "tabular data"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "machine learning",
+          "tabular data"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "machine learning with tabular data"
+    }
+  },
+  {
+    "id": 40,
+    "original_query": "Speech-to-text libraries supporting Vietnamese",
+    "rewritten_query": "speech to text libraries supporting vietnamese",
+    "true_label": true,
+    "llm_thinking": "The rewritten query is a simplified version of the original query with the same words and intent. The only difference is the removal of hyphens and the use of spaces instead, which does not affect the meaning or intent of the query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Vietnamese",
+        "libraries": [
+          "speech to text"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "Vietnamese"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "speech to text libraries supporting vietnamese"
+    }
+  },
+  {
+    "id": 41,
+    "original_query": "Simple open-source chatbot written in Python",
+    "rewritten_query": "simple open source chatbot written in python",
+    "true_label": true,
+    "llm_thinking": "The rewritten query is case-insensitive and removes spaces, but it still conveys the same intent and meaning as the original query, searching for an open-source chatbot written in Python.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Python",
+        "libraries": [
+          "Python"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "chatbot",
+          "open source"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "simple open source chatbot written in python"
+    }
+  },
+  {
+    "id": 42,
+    "original_query": "Deepfake detection repositories with 1000+ stars",
+    "rewritten_query": "deepfake detection",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent to filter repositories by their star count, which is an important aspect of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 1000,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "deepfake detection"
+    }
+  },
+  {
+    "id": 43,
+    "original_query": "Real-time face recognition in Python with GPU support",
+    "rewritten_query": "real-time face recognition in python with gpu support",
+    "true_label": true,
+    "llm_thinking": "The rewritten query is a case-insensitive version of the original query, which does not change the intent or meaning of the search.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "gpu",
+          "cuda",
+          "tensorflow",
+          "pytorch"
+        ],
+        "created_after": "2024-06-11",
+        "topics": [
+          "face recognition",
+          "real-time"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "real-time face recognition in python with gpu support"
+    }
+  },
+  {
+    "id": 44,
+    "original_query": "Web frameworks in Rust created after 2023",
+    "rewritten_query": "Rust web frameworks",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent of filtering web frameworks by their creation date, specifically those created after 2023.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Rust",
+        "created_after": "2023-01-01",
+        "topics": [
+          "web framework"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Rust web frameworks"
+    }
+  },
+  {
+    "id": 45,
+    "original_query": "Fine-tuning BERT with PyTorch - recommended repos",
+    "rewritten_query": "fine tuning bert with pytorch",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent of searching for 'recommended repos', which was present in the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "pytorch"
+        ],
+        "topics": [
+          "bert",
+          "fine-tuning"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "fine tuning bert with pytorch"
+    }
+  },
+  {
+    "id": 46,
+    "original_query": "Best open-source database management tools",
+    "rewritten_query": "open source database management tools",
+    "true_label": true,
+    "llm_thinking": "The rewritten query removes the word 'Best', which is an evaluative term, but still conveys the same intent and meaning as the original query by asking for open-source database management tools.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "database",
+          "management",
+          "tools"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "database",
+          "management",
+          "tools"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "open source database management tools"
+    }
+  },
+  {
+    "id": 47,
+    "original_query": "Popular Python repositories created in early 2024",
+    "rewritten_query": "python repositories",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent and meaning of the original query, as it no longer specifies the time frame of 'early 2024' and the word 'popular'.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "stars_min": 500,
+        "created_after": "2024-01-01",
+        "created_before": "2024-03-31"
+      },
+      "query_vector_required": false,
+      "rewritten_query": "python repositories"
+    }
+  },
+  {
+    "id": 48,
+    "original_query": "Learn to build CLI tools in Rust from 2022 onward",
+    "rewritten_query": "build cli tools in rust",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent of learning and the time constraint of 'from 2022 onward', resulting in a query that is more focused on building CLI tools in Rust without any specific context or goal.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Rust",
+        "created_after": "2022-01-01"
+      },
+      "query_vector_required": false,
+      "rewritten_query": "build cli tools in rust"
+    }
+  },
+  {
+    "id": 49,
+    "original_query": "TensorFlow object detection projects with 500+ stars",
+    "rewritten_query": "tensorflow object detection projects",
+    "true_label": false,
+    "llm_thinking": "The rewritten query lacks the specific filter criteria ('with 500+ stars') present in the original query, which could alter the search results and intent.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "tensorflow"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 500,
+        "topics": [
+          "object detection"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "tensorflow object detection projects"
+    }
+  },
+  {
+    "id": 50,
+    "original_query": "AI learning resources for university freshmen",
+    "rewritten_query": "ai learning resources for university freshmen",
+    "true_label": true,
+    "llm_thinking": "The rewritten query is identical to the original query, preserving the same intent and meaning.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "ai"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "university",
+          "freshmen"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "ai learning resources for university freshmen"
+    }
+  },
+  {
+    "id": 51,
+    "original_query": "Project về sentiment analysis tiếng Việt, dùng PyTorch hoặc Huggingface",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Python",
+        "libraries": [
+          "PyTorch",
+          "Hugging Face"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "Sentiment Analysis"
+        ]
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 52,
+    "original_query": "AI cho người mới học, viết bằng Python, được tạo sau năm 2021",
+    "rewritten_query": "ai cho người mới học viết bằng python",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the specific date constraint 'sau năm 2021' (after 2021) which was present in the original query, potentially altering the search results.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "created_after": "2021-01-01",
+        "topics": [
+          "ai",
+          "machine learning"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "ai cho người mới học viết bằng python"
+    }
+  },
+  {
+    "id": 53,
+    "original_query": "Tìm các repo Python về AI đang hot với hơn 1000 stars",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "tm",
+          "cc",
+          "ai"
+        ],
+        "stars_min": 1000,
+        "topics": [
+          "hot",
+          "vi",
+          "hn"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 54,
+    "original_query": "Có thư viện xử lý ảnh bằng Python nào có trên 500 sao không?",
+    "rewritten_query": "c th vin x l nh bng",
+    "true_label": false,
+    "llm_thinking": "The rewritten query appears to be a Vietnamese string, but it does not match the original query's intent and meaning. The original query is asking for a Python library for image processing with more than 500 stars, while the rewritten query is a jumbled version of the original query's keywords. The correct translation of the rewritten query would be more accurate to determine its intent and meaning.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Python",
+        "stars_min": 500,
+        "topics": [
+          "c th vin x l nh bng"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "c th vin x l nh bng"
+    }
+  },
+  {
+    "id": 55,
+    "original_query": "Dự án chatbot sử dụng Transformer và được cập nhật sau 2023",
+    "rewritten_query": "transformer chatbot",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent and meaning of the original query, which specifically mentions a project using Transformer and updated after 2023. The rewritten query is too general and does not convey the same level of specificity.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "cpp",
+        "libraries": [
+          "transformer"
+        ],
+        "created_after": "2023-01-01",
+        "topics": [
+          "chatbot"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "transformer chatbot"
+    }
+  },
+  {
+    "id": 56,
+    "original_query": "Repositories Machine Learning viết bằng PyTorch, từ 2020 trở đi",
+    "rewritten_query": "repositories with Vit and PyTorch",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the original intent and meaning. The original query specifically asks for Machine Learning repositories written in PyTorch from 2020 onwards, but the rewritten query only mentions 'Vit and PyTorch' without any time constraint or specific topic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "pytorch",
+        "libraries": [
+          "vit",
+          "machine learning"
+        ],
+        "created_after": "2020-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "bng"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "repositories with Vit and PyTorch"
+    }
+  },
+  {
+    "id": 57,
+    "original_query": "Thư viện React component phổ biến, có trên 2000 stars",
+    "rewritten_query": "React component",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the context of the query, which is looking for a popular React component library with over 2000 stars. The original query includes specific details about the component's popularity, which are not present in the rewritten query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "null",
+        "libraries": [
+          "React"
+        ],
+        "created_after": "null",
+        "created_before": "null",
+        "stars_min": 2000,
+        "topics": [
+          "null"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "React component"
+    }
+  },
+  {
+    "id": 58,
+    "original_query": "Các repo nổi bật về trực quan hóa dữ liệu, có ít nhất 1000 stars",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "C",
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 1000,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 59,
+    "original_query": "Gợi ý các thư viện xử lý ngôn ngữ tự nhiên với hơn 500 sao",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 500,
+        "topics": []
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 60,
+    "original_query": "Dự án AI mới được cập nhật trong vòng 6 tháng gần nhất",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": "2025-01-01",
+        "created_before": "2025-06-11",
+        "stars_min": null,
+        "topics": []
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 61,
+    "original_query": "Project sentiment analysis tiếng Việt dùng Python, sau năm 2022",
+    "rewritten_query": "project sentiment analysis using python",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the language filter ('tiếng Việt') and the time filter ('sau năm 2022') present in the original query, which may affect the search results.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "created_after": "2022-01-01",
+        "topics": [
+          "sentiment analysis",
+          "project"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "project sentiment analysis using python"
+    }
+  },
+  {
+    "id": 62,
+    "original_query": "Repository C++ cho tính toán hiệu năng cao, từ năm 2021",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": "2021-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": []
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 63,
+    "original_query": "Repo Go cho người mới bắt đầu học, có dưới 500 stars",
+    "rewritten_query": "repo go cho người mới bắt đầu sử dụng",
+    "true_label": false,
+    "llm_thinking": "The rewritten query changes the keyword 'học' (which means 'learn' or 'study') to 'sử dụng' (which means 'use'), which may alter the intent of the original query. The original query seems to be looking for a Go repository for beginners to learn, while the rewritten query might be looking for a Go repository for beginners to use.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "go",
+        "stars_min": 500,
+        "topics": [
+          "repo cho ngi mi bt u hc c di"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "repo go cho người mới bắt đầu sử dụng"
+    }
+  },
+  {
+    "id": 64,
+    "original_query": "Deep learning với Keras, tạo sau 2021, có ít nhất 100 stars",
+    "rewritten_query": "deep learning with keras",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent of filtering by creation date (sau 2021) and the number of stars (có ít nhất 100 stars), which are specific requirements in the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Python",
+        "libraries": [
+          "Keras"
+        ],
+        "created_after": "2021-01-01",
+        "created_before": "2025-06-11",
+        "stars_min": 100
+      },
+      "query_vector_required": false,
+      "rewritten_query": "deep learning with keras"
+    }
+  },
+  {
+    "id": 65,
+    "original_query": "Top repo Javascript đang thịnh hành với trên 2000 sao",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "javascript",
+        "stars_min": 2000,
+        "topics": [
+          "top",
+          "repo"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 66,
+    "original_query": "Dự án mới về Stable Diffusion, cập nhật trong năm 2024",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "null",
+        "libraries": [
+          "stable diffusion"
+        ],
+        "created_after": "2024-01-01",
+        "created_before": "2024-12-31",
+        "stars_min": null,
+        "topics": [
+          "stable diffusion",
+          "nmt"
+        ]
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 67,
+    "original_query": "Thư viện Python crawl dữ liệu từ web, có hơn 300 stars",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "web"
+        ],
+        "stars_min": 300,
+        "topics": [
+          "crawl",
+          "web"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 68,
+    "original_query": "Dự án xử lý video real-time dùng Python, tạo sau 2022",
+    "rewritten_query": "real-time video processing using python",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the original intent of searching for a project in Vietnamese and specifically created after 2022. The rewritten query is more general and does not include any temporal or linguistic constraints.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "created_after": "2022-01-01",
+        "topics": [
+          "video",
+          "real-time"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "real-time video processing using python"
+    }
+  },
+  {
+    "id": 69,
+    "original_query": "Repo mã nguồn mở phát hiện bất thường (anomaly detection), dùng PyTorch",
+    "rewritten_query": "anomaly detection using PyTorch",
+    "true_label": true,
+    "llm_thinking": "The rewritten query maintains the same intent and meaning as the original query, focusing on anomaly detection using PyTorch, which is the primary concern in the original Vietnamese query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Python",
+        "libraries": [
+          "PyTorch"
+        ],
+        "topics": [
+          "anomaly detection"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "anomaly detection using PyTorch"
+    }
+  },
+  {
+    "id": 70,
+    "original_query": "Java repositories được tạo trong năm 2023",
+    "rewritten_query": "java repositories",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent of searching for Java repositories created in 2023, as it removes the year filter and language specification.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "java",
+        "libraries": [
+          "c"
+        ],
+        "created_after": "2023-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "trong",
+          "nm"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "java repositories"
+    }
+  },
+  {
+    "id": 71,
+    "original_query": "Thư viện phân loại hình ảnh với hơn 2000 stars",
+    "rewritten_query": "th vin phn loi hnh nh vi",
+    "true_label": false,
+    "llm_thinking": "The rewritten query appears to be a Vietnamese translation of the original query, but it loses the intent and meaning of the original query. The original query mentions a library with over 2000 stars, which is a specific and meaningful search term. The rewritten query is a rough translation and does not convey the same information.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 2000,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "th vin phn loi hnh nh vi"
+    }
+  },
+  {
+    "id": 72,
+    "original_query": "Repo dạy reinforcement learning cơ bản với Python",
+    "rewritten_query": "reinforcement learning in python",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the language and location specificity of the original query, which seems to be targeting a Vietnamese audience and focusing on basic reinforcement learning concepts with Python. The rewritten query is more general and may return results that don't match the original intent.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "reinforcement learning"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "reinforcement learning",
+          "ai",
+          "machine learning"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "reinforcement learning in python"
+    }
+  },
+  {
+    "id": 73,
+    "original_query": "Repo sử dụng Huggingface Transformers, có trên 1000 sao",
+    "rewritten_query": "huggingface transformers",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent of filtering repositories by the number of stars (> 1000), which is present in the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "huggingface",
+          "transformers"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 1000,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "huggingface transformers"
+    }
+  },
+  {
+    "id": 74,
+    "original_query": "Repositories về hệ thống gợi ý, viết bằng Python, cập nhật gần đây",
+    "rewritten_query": "repositories v h thng gi vit bng python cp nht gn y",
+    "true_label": false,
+    "llm_thinking": "The rewritten query appears to be a Vietnamese text with some characters changed or missing, but the original query is a mix of Vietnamese and English. The intent and meaning are not preserved due to the loss of some characters and the change in language (although it's still Vietnamese).",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "cp"
+        ],
+        "created_after": "2024-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "h thinh gi vit bang"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "repositories v h thng gi vit bng python cp nht gn y"
+    }
+  },
+  {
+    "id": 75,
+    "original_query": "Công cụ tối ưu hóa mô hình học sâu dùng TensorFlow",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "tensorflow"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "tensorflow",
+          "machine learning"
+        ]
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 76,
+    "original_query": "Chatbot đơn giản viết bằng Node.js, dưới 500 sao",
+    "rewritten_query": "chatbot using Node.js",
+    "true_label": false,
+    "llm_thinking": "The rewritten query changes the intent and meaning of the original query. The original query is looking for a simple chatbot written in Node.js with a specific number of stars, but the rewritten query is looking for a chatbot using Node.js without any specific constraints.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "node_js",
+        "libraries": [
+          "chatbot"
+        ],
+        "stars_min": 500,
+        "topics": [
+          "gin",
+          "vietnamese"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "chatbot using Node.js"
+    }
+  },
+  {
+    "id": 77,
+    "original_query": "Thư viện xử lý tiếng Nhật bằng Python, có nhiều lượt sao",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "topics": [
+          "machine learning"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 78,
+    "original_query": "Repository sử dụng Langchain và LlamaIndex, tạo sau 2023",
+    "rewritten_query": "langchain repositories after 2023",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the Vietnamese language context and specifically the mention of LlamaIndex, which might be an important keyword in the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "langchain",
+        "libraries": [
+          "llamaindex"
+        ],
+        "created_after": "2023-01-01",
+        "created_before": null
+      },
+      "query_vector_required": false,
+      "rewritten_query": "langchain repositories after 2023"
+    }
+  },
+  {
+    "id": 79,
+    "original_query": "Repo Flask mới cập nhật gần đây, có trên 300 sao",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "flask",
+        "libraries": [
+          "cp",
+          "nht"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 300,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 80,
+    "original_query": "Dự án AI nổi bật cho người mới bắt đầu, từ 2022",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": "2022-01-01",
+        "stars_min": null,
+        "topics": []
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 81,
+    "original_query": "Repositories tốt nhất cho NLP, có trên 2000 sao",
+    "rewritten_query": "repositories cho nlp",
+    "true_label": false,
+    "llm_thinking": "The rewritten query removes key information from the original query, specifically the language ('tốt nhất cho NLP') and the minimum number of stars ('có trên 2000 sao'), which could significantly impact the search results. The original query likely intended to find highly-rated NLP repositories with a minimum of 2000 stars, whereas the rewritten query is too vague and may return repositories with different characteristics.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "nlp"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 2000,
+        "topics": [
+          "nlp"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "repositories cho nlp"
+    }
+  },
+  {
+    "id": 82,
+    "original_query": "REST API với Go, tạo sau năm 2021",
+    "rewritten_query": "REST API in Go",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the language and time constraint information present in the original query, which may affect the search results.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Go",
+        "created_after": "2021-01-01",
+        "topics": [
+          "REST API"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "REST API in Go"
+    }
+  },
+  {
+    "id": 83,
+    "original_query": "Công cụ scraping dữ liệu dùng Python, có trên 500 sao",
+    "rewritten_query": "python scraping",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent and meaning of the original query, which specifically asks for a Python scraping tool with more than 500 stars. The rewritten query is more general and does not include the key criteria of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "scrapy"
+        ],
+        "stars_min": 500,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "python scraping"
+    }
+  },
+  {
+    "id": 84,
+    "original_query": "Dự án Việt hóa mô hình ngôn ngữ lớn, cập nhật gần đây",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": []
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 85,
+    "original_query": "Thư viện text summarization nổi bật, dùng Transformer",
+    "rewritten_query": "Transformer-based text summarization",
+    "true_label": true,
+    "llm_thinking": "Both queries are about text summarization libraries that use the Transformer model, the main difference is in the wording and language, but the intent and meaning remain the same.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "transformer"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "text summarization"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Transformer-based text summarization"
+    }
+  },
+  {
+    "id": 86,
+    "original_query": "Dự án xử lý âm thanh bằng deep learning, viết bằng Python",
+    "rewritten_query": "deep learning model using VIT with Python",
+    "true_label": false,
+    "llm_thinking": "The rewritten query changes the intent and meaning of the original query. The original query is about a project for audio processing using deep learning in Python, while the rewritten query is about a deep learning model using VIT (Vision Transformer) with Python, which is a different topic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "deep learning"
+        ],
+        "topics": [
+          "vit"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "deep learning model using VIT with Python"
+    }
+  },
+  {
+    "id": 87,
+    "original_query": "Top thư viện OCR mã nguồn mở, có trên 1000 stars",
+    "rewritten_query": "top repositories with Vietnamese OCR in machine learning",
+    "true_label": false,
+    "llm_thinking": "The rewritten query has changed the intent and meaning of the original query. The original query is looking for a specific type of open-source OCR library with over 1000 stars, but the rewritten query is looking for repositories with Vietnamese OCR in the context of machine learning, which is a broader topic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 1000,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "top repositories with Vietnamese OCR in machine learning"
+    }
+  },
+  {
+    "id": 88,
+    "original_query": "Repo hướng dẫn deploy mô hình AI trên cloud",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": []
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 89,
+    "original_query": "Project crawl báo tiếng Việt với hơn 200 stars",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 200,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 90,
+    "original_query": "Repo xử lý dữ liệu bảng (tabular) cho machine learning",
+    "rewritten_query": "machine learning",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the specific context of the original query, which is about a repository for processing tabular data for machine learning. The rewritten query is too general and does not convey the same intent.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "tabular"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "machine learning"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "machine learning"
+    }
+  },
+  {
+    "id": 91,
+    "original_query": "Các thư viện speech-to-text nổi bật dùng tiếng Việt",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "cc",
+          "vin"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "speech_to_text",
+          "ni_bang_tai_dung_ting_vit"
+        ]
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 92,
+    "original_query": "Chatbot mã nguồn mở đơn giản, viết bằng Python",
+    "rewritten_query": "chatbot",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the specific information about the chatbot being open-source and written in Python, which could affect the search results and intent.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "chatbot",
+          "ngun",
+          "n gin vit bng"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "chatbot"
+    }
+  },
+  {
+    "id": 93,
+    "original_query": "Dự án phát hiện deepfake, có hơn 1000 stars",
+    "rewritten_query": "deepfake repositories",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the context of the project being a Vietnamese project with more than 1000 stars, which is likely important for a search in a GitHub repository. The original query seems to be in Vietnamese, suggesting it's a specific project, whereas the rewritten query is a more general term.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 1000,
+        "topics": [
+          "deepfake"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "deepfake repositories"
+    }
+  },
+  {
+    "id": 94,
+    "original_query": "Nhận diện khuôn mặt real-time dùng Python, có GPU support",
+    "rewritten_query": "real-time processing using Python and GPU support",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the Vietnamese language context and the specific requirement of 'Nhận diện khuôn mặt' (facial recognition) which is present in the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "gpu"
+        ],
+        "topics": [
+          "real-time"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "real-time processing using Python and GPU support"
+    }
+  },
+  {
+    "id": 95,
+    "original_query": "Ví dụ Rust framework cho web, cập nhật trong năm 2023",
+    "rewritten_query": "Rust web framework",
+    "true_label": false,
+    "llm_thinking": "The rewritten query is more concise and does not include the language translation or the year filter, which were present in the original query. This changes the intent and meaning of the query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Rust",
+        "libraries": [
+          "framework"
+        ],
+        "created_after": "2023-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "web",
+          "cp nht"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Rust web framework"
+    }
+  },
+  {
+    "id": 96,
+    "original_query": "Thư viện fine-tune BERT bằng PyTorch",
+    "rewritten_query": "BERT fine-tuning using PyTorch",
+    "true_label": true,
+    "llm_thinking": "The rewritten query maintains the same intent and meaning as the original query, as it still searches for BERT fine-tuning using PyTorch, despite using different words and wording.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Python",
+        "libraries": [
+          "PyTorch"
+        ],
+        "topics": [
+          "BERT",
+          "Fine-tuning"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "BERT fine-tuning using PyTorch"
+    }
+  },
+  {
+    "id": 97,
+    "original_query": "Repo mã nguồn mở về quản lý database tốt nhất",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "database"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "tt nht"
+        ]
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 98,
+    "original_query": "Dự án Python nổi bật đầu năm 2024, có trên 1000 sao",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_thinking": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "python",
+        "stars_min": 1000,
+        "created_after": "2024-01-01",
+        "topics": [
+          "trong",
+          "nang"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 99,
+    "original_query": "Học viết CLI bằng Rust với các repo được tạo sau 2022",
+    "rewritten_query": "Rust repository with Hc and Vi CC license after 2022",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the original intent and meaning. The original query is in Vietnamese and asks for repositories created after 2022 that teach how to write a CLI tool in Rust. The rewritten query contains a mix of unrelated keywords and does not convey the same information.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": "Rust",
+        "libraries": [
+          "Hc"
+        ],
+        "created_after": "2022-01-01",
+        "topics": [
+          "Vi CC"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Rust repository with Hc and Vi CC license after 2022"
+    }
+  },
+  {
+    "id": 100,
+    "original_query": "Project TensorFlow object detection với hơn 500 stars",
+    "rewritten_query": "tensorflow object detection",
+    "true_label": false,
+    "llm_thinking": "The rewritten query loses the intent of searching for a TensorFlow object detection project with more than 500 stars, which was present in the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "tensorflow"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 500,
+        "topics": [
+          "object detection",
+          "vn",
+          "vi"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "tensorflow object detection"
+    }
+  }
+]

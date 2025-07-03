@@ -1,0 +1,2397 @@
+[
+  {
+    "id": 1,
+    "original_query": "Beginner-friendly AI projects written in Python, created after 2021",
+    "rewritten_query": "AI beginner projects in Python",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and purpose of the original query, focusing on AI projects in Python, which aligns with the original intent of beginner-friendly AI projects in Python.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "Extracted 'beginner friendly ai projects' as the main topic, 'python' as the programming language, and 'created after 2021' as the date filter. Assumed 'beginner friendly' implies projects suitable for new learners.",
+      "filters": {
+        "language": "python",
+        "libraries": [],
+        "created_after": "2021-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "ai",
+          "beginner friendly"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "AI beginner projects in Python"
+    }
+  },
+  {
+    "id": 2,
+    "original_query": "Popular Python repositories about AI with over 1000 stars",
+    "rewritten_query": "python ai",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and intent of the original query, focusing on 'Python' and 'AI'. The omission of time and star count filters does not affect the core intent.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query is classified as 'search_repository' because it contains keywords related to searching repositories. The intent is to find popular Python repositories related to AI with a specific number of stars. The query contains domain-specific keywords such as 'popular', 'python', and 'ai', which indicates the rewritten query should focus on these topics. The user also mentions a specific number of stars (over 1000), which is extracted and assigned to 'stars_min'.",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "ai"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 1000,
+        "topics": [
+          "ai"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "python ai"
+    }
+  },
+  {
+    "id": 3,
+    "original_query": "Any image processing libraries in Python with more than 500 stars?",
+    "rewritten_query": "image processing in python",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query, which is image processing in Python. Although it omits the filter related to the number of stars, this detail is excluded according to the rules provided.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is asking for image processing libraries in Python with a specific number of stars. The query mentions 'image processing' as the topic and 'python' as the language. It also explicitly mentions 'more than 500 stars' as the filter for popularity.",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "image processing"
+        ],
+        "stars_min": 500,
+        "created_after": null,
+        "created_before": null,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "image processing in python"
+    }
+  },
+  {
+    "id": 4,
+    "original_query": "Transformer-based chatbot project updated after 2023",
+    "rewritten_query": "transformer based chatbot project",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent and main meaning of the original query, focusing on the Transformer-based chatbot project. It does not include time-related phrases, but this is acceptable according to the provided rules.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query mentions a transformer-based chatbot project, which implies a specific topic. It also mentions 'updated after 2023', which suggests a filter on the repository's last update date. The keywords 'transformer' and 'chatbot' are domain-specific and indicate the rewritten query should focus on these topics.",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "transformer",
+          "chatbot"
+        ],
+        "created_after": "2023-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "chatbot"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "transformer based chatbot project"
+    }
+  },
+  {
+    "id": 5,
+    "original_query": "Machine learning repositories using PyTorch since 2020",
+    "rewritten_query": "machine learning repositories using PyTorch",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query, which is machine learning repositories using PyTorch. It does not include time-related phrases, but this is allowed according to the rules.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user is looking for machine learning repositories on GitHub that use PyTorch and were created since 2020. The query contains domain-specific keywords like 'machine learning', 'PyTorch', and 'since 2020', indicating a clear topic and specific constraints.",
+      "filters": {
+        "language": "null",
+        "libraries": [
+          "pytorch"
+        ],
+        "created_after": "2020-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "machine learning"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "machine learning repositories using PyTorch"
+    }
+  },
+  {
+    "id": 6,
+    "original_query": "Popular React component libraries with more than 2000 stars",
+    "rewritten_query": "popular react component libraries",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent and main meaning of the original query, focusing on popular React component libraries, ignoring the specific filter on star count.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "Extracted filters for language, libraries, stars, and topics. Set stars_min to 2000 based on the user's query.",
+      "filters": {
+        "language": "null",
+        "libraries": [
+          "react"
+        ],
+        "created_after": "null",
+        "created_before": "null",
+        "stars_min": 2000,
+        "topics": [
+          "null"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "popular react component libraries"
+    }
+  },
+  {
+    "id": 7,
+    "original_query": "Top-starred data visualization repositories, over 1000 stars",
+    "rewritten_query": "data visualization",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic, 'data visualization', of the original query, ignoring the time and star count-related phrases.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user's query is asking for the top starred data visualization repositories with more than 1000 stars. This is inferred from the keywords 'top starred', 'data visualization', and the specific number '1000' which implies a threshold for the number of stars.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 1000,
+        "topics": [
+          "data visualization"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "data visualization"
+    }
+  },
+  {
+    "id": 8,
+    "original_query": "NLP libraries with at least 500 stars and recent updates",
+    "rewritten_query": "natural language processing",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent and main meaning of the original query, focusing on NLP libraries, which is the main topic of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query mentions NLP libraries, which indicates a specific domain. The phrase 'at least 500 stars' implies popularity, so we set 'stars_min' to 500. 'Recent updates' suggests we should filter for repositories created recently, so we set 'created_after' to 2025-03-15 and 'created_before' to 2025-06-13.",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "nlp"
+        ],
+        "created_after": "2025-03-15",
+        "created_before": "2025-06-13",
+        "stars_min": 500,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "natural language processing"
+    }
+  },
+  {
+    "id": 9,
+    "original_query": "AI projects updated within the last 6 months",
+    "rewritten_query": "AI projects",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent and main meaning of the original query, focusing on AI projects, which is the primary topic of the original query. The difference in time filter does not affect the core intent and is therefore ignored.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query mentions 'ai projects' which is a specific domain, and 'updated within the last 6 months' which implies a time constraint. The intent is to search for AI-related repositories updated recently.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": "2024-12-13",
+        "created_before": "2025-06-13",
+        "stars_min": null,
+        "topics": [
+          "ai"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "AI projects"
+    }
+  },
+  {
+    "id": 10,
+    "original_query": "Vietnamese sentiment analysis repo using Python, from 2022",
+    "rewritten_query": "Vietnamese sentiment analysis using Python",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query, which is Vietnamese sentiment analysis using Python. The omission of 'repo' and 'from 2022' does not affect the core intent and meaning of the query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user is searching for a Vietnamese sentiment analysis repository using Python and is interested in repositories created in 2022.",
+      "filters": {
+        "language": "Python",
+        "libraries": [
+          "Vietnamese",
+          "sentiment analysis"
+        ],
+        "created_after": "2022-01-01",
+        "created_before": "2022-12-31",
+        "stars_min": null,
+        "topics": [
+          "sentiment-analysis",
+          "vietnamese"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Vietnamese sentiment analysis using Python"
+    }
+  },
+  {
+    "id": 11,
+    "original_query": "High performance computing projects in C++, created since 2021",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query 'high performance computing projects in c created since 2021' implies a search for C-based projects related to high-performance computing, created after 2021. The keyword 'c' is used to specify the programming language, and 'high performance computing' indicates the topic. The phrase 'created since 2021' suggests a filter for the creation date.",
+      "filters": {
+        "language": "c",
+        "libraries": [],
+        "created_after": "2021-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "high performance computing"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 12,
+    "original_query": "Beginner-friendly Go repositories with fewer than 500 stars",
+    "rewritten_query": "beginner-friendly Go repositories",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and intent of the original query, focusing on beginner-friendly Go repositories, and ignores the filter related to star count.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user is looking for beginner-friendly Go repositories, which implies they want repositories that are easy to understand and use for beginners. The query also specifies that the repositories should have fewer than 500 stars, indicating a popularity filter.",
+      "filters": {
+        "language": "Go",
+        "stars_min": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "beginner-friendly Go repositories"
+    }
+  },
+  {
+    "id": 13,
+    "original_query": "Keras-based deep learning projects created after 2021",
+    "rewritten_query": "keras based deep learning projects",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the same core intent and main meaning of the original query, focusing on Keras-based deep learning projects, ignoring the time filter.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query contains the keyword 'keras' which is a deep learning framework, and 'deep learning projects'. The query also specifies a date constraint 'created after 2021'. This information suggests that the user is looking for repositories related to deep learning projects using Keras, created after 2021.",
+      "filters": {
+        "language": "null",
+        "libraries": [
+          "keras"
+        ],
+        "created_after": "2021-01-01",
+        "created_before": "null",
+        "stars_min": "null",
+        "topics": [
+          "null"
+        ]
+      },
+      "query_vector_required": "false",
+      "rewritten_query": "keras based deep learning projects"
+    }
+  },
+  {
+    "id": 14,
+    "original_query": "Trending JavaScript repositories with over 2000 stars",
+    "rewritten_query": "trending javascript repositories",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query, which is 'trending JavaScript repositories', ignoring the filter on star count.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is asking for trending JavaScript repositories with a specific number of stars. The intent is clear, and the filters are extracted accordingly.",
+      "filters": {
+        "language": "javascript",
+        "stars_min": 2000,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "trending javascript repositories"
+    }
+  },
+  {
+    "id": 15,
+    "original_query": "Stable Diffusion projects updated in 2024",
+    "rewritten_query": "stable diffusion",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query, which is related to Stable Diffusion projects.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query 'stable diffusion projects updated in 2024' was analyzed to extract relevant filters and information. The query explicitly mentions 'stable diffusion', which is a specific topic, and 'updated in 2024', which implies recentness. Based on this, we can infer that the user is looking for repositories related to stable diffusion that have been updated in 2024.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": "2024-01-01",
+        "created_before": "2024-12-31",
+        "stars_min": null,
+        "topics": [
+          "stable diffusion"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "stable diffusion"
+    }
+  },
+  {
+    "id": 16,
+    "original_query": "Web scraping tools in Python with at least 300 stars",
+    "rewritten_query": "web scraping tools in Python",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query, which is web scraping tools in Python. The omission of the star count filter is acceptable according to the rules.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query mentions web scraping tools in Python, which is a clear domain-specific topic. It also explicitly mentions a minimum number of stars (300), so we can extract the filters accordingly.",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "web scraping"
+        ],
+        "stars_min": 300,
+        "topics": [
+          "web scraping"
+        ],
+        "created_after": null,
+        "created_before": null
+      },
+      "query_vector_required": false,
+      "rewritten_query": "web scraping tools in Python"
+    }
+  },
+  {
+    "id": 17,
+    "original_query": "Real-time video processing projects in Python from 2022",
+    "rewritten_query": "real-time video processing in Python",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query, omitting only the time-related phrase 'from 2022', which is allowed according to the rules.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query contains keywords related to real-time video processing and Python. The specific date '2022' implies that the user is interested in projects created or updated during that year. This information allows us to filter the search results accordingly.",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "null"
+        ],
+        "created_after": "2022-01-01",
+        "created_before": "2023-01-01",
+        "stars_min": null,
+        "topics": [
+          "null"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "real-time video processing in Python"
+    }
+  },
+  {
+    "id": 18,
+    "original_query": "Open-source anomaly detection tools built with PyTorch",
+    "rewritten_query": "anomaly detection tools built with PyTorch",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic, purpose, and focus of the original query, only omitting the 'open-source' filter, which is not relevant to the main intent.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user is searching for open source anomaly detection tools built with PyTorch. The query contains domain-specific keywords 'anomaly detection', 'tools', and 'PyTorch'. This suggests a specific topic and clear constraints.",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "pytorch"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "anomaly detection"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "anomaly detection tools built with PyTorch"
+    }
+  },
+  {
+    "id": 19,
+    "original_query": "Java repositories created in 2023",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "Extracted the intent to search for Java repositories created in 2023. Identified the language as Java and the date constraint as 2023.",
+      "filters": {
+        "language": "java",
+        "created_after": "2023-01-01",
+        "created_before": "2023-12-31"
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 20,
+    "original_query": "Image classification libraries with 2000+ stars",
+    "rewritten_query": "image classification libraries",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent of the original query by focusing on the main topic of 'image classification libraries', ignoring the filter on the number of stars.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query mentions 'image classification libraries' as specific domain-specific keywords, indicating a clear topic. It also mentions '2000 stars' which implies a popularity filter. The rewritten query will include only the domain-specific keywords.",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "image classification"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 2000,
+        "topics": [
+          "image classification"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "image classification libraries"
+    }
+  },
+  {
+    "id": 21,
+    "original_query": "Reinforcement learning tutorials using Python",
+    "rewritten_query": "reinforcement learning tutorials using python",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the same core intent and main meaning as the original query, only the case and whitespace are changed.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query mentions 'reinforcement learning', which is a specific topic in machine learning. It also mentions 'tutorials', indicating a need for learning resources. Additionally, it specifies 'using python', which narrows down the search to Python-based resources. This implies a clear topic and specific constraints, so we set query_vector_required to false.",
+      "filters": {
+        "language": "python",
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "reinforcement learning",
+          "tutorials"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "reinforcement learning tutorials using python"
+    }
+  },
+  {
+    "id": 22,
+    "original_query": "Huggingface Transformers repositories with over 1000 stars",
+    "rewritten_query": "Hugging Face Transformers",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query, which is Hugging Face Transformers. It ignores the filters related to time and star count, as per the rules.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is asking for repositories related to Hugging Face Transformers with more than 1000 stars. The intent is to search for repositories, and the query is specific about the topic (Hugging Face Transformers) and the filter (more than 1000 stars).",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "transformers"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 1000,
+        "topics": [
+          "transformers"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Hugging Face Transformers"
+    }
+  },
+  {
+    "id": 23,
+    "original_query": "Recommender systems written in Python and updated recently",
+    "rewritten_query": "recommender systems",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent and main meaning of the original query by focusing on the main topic of 'recommender systems', which is the same as the original query's main subject. The omission of language and time filters does not affect the core meaning of the query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query 'recommender systems written in python and updated recently' can be broken down into the following components:\n  - 'recommender systems' is a specific domain, implying a search for repositories related to recommender systems.\n  - 'written in python' specifies the programming language used in the repositories.\n  - 'and updated recently' implies a filter for repositories created or updated within a certain time frame.\n  We'll extract filters for language, recent updates, and assume the intent is to search for repositories with a specific topic.",
+      "filters": {
+        "language": "python",
+        "libraries": [],
+        "created_after": "2025-03-15",
+        "created_before": "2025-06-13",
+        "stars_min": null,
+        "topics": [
+          "recommender systems"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "recommender systems"
+    }
+  },
+  {
+    "id": 24,
+    "original_query": "Deep learning model optimization tools using TensorFlow",
+    "rewritten_query": "deep learning model optimization tools using tensorflow",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic, purpose, and focus of the original query, which is about deep learning model optimization tools using TensorFlow.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query mentions 'deep learning model optimization tools' which suggests a specific topic. It also mentions 'tensorflow' which is a popular library for deep learning. This implies that the user is looking for repositories related to deep learning model optimization using tensorflow. The query does not explicitly mention any filters, but based on the topic, it can be inferred that the user is likely looking for repositories with a high number of stars and recent activity.",
+      "filters": {
+        "language": "tensorflow",
+        "libraries": [
+          "tensorflow"
+        ],
+        "created_after": "2024-06-13",
+        "created_before": null,
+        "stars_min": 500,
+        "topics": [
+          "deep learning model optimization"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "deep learning model optimization tools using tensorflow"
+    }
+  },
+  {
+    "id": 25,
+    "original_query": "Simple Node.js chatbot with under 500 stars",
+    "rewritten_query": "simple Node.js chatbot",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main intent and meaning of the original query, focusing on a 'simple Node.js chatbot'. The omission of 'under 500 stars' does not affect the core topic or subject of the query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query mentions a simple Node.js chatbot with a specific constraint (under 500 stars). The intent is to search for a repository that meets these criteria.",
+      "filters": {
+        "language": "nodejs",
+        "stars_min": 0,
+        "topics": [
+          "chatbot"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "simple Node.js chatbot"
+    }
+  },
+  {
+    "id": 26,
+    "original_query": "Japanese language processing libraries in Python",
+    "rewritten_query": "japanese language processing libraries",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and intent of the original query, focusing on Japanese language processing libraries, which is the core subject of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "Extracted 'japanese language processing' as the main topic, and 'libraries in python' as the specific constraint. Assumed 'libraries' refers to software libraries or frameworks, and 'python' refers to the programming language.",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "japanese language processing"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "natural language processing",
+          "japanese"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "japanese language processing libraries"
+    }
+  },
+  {
+    "id": 27,
+    "original_query": "Langchain and LlamaIndex based repositories from 2023 onward",
+    "rewritten_query": "langchain and llama index",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent of the original query by focusing on the main topics 'Langchain' and 'LlamaIndex', ignoring the time filter 'from 2023 onward'.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query mentions 'langchain' and 'llamaindex', which are likely domain-specific keywords related to GitHub repositories. The user also specifies a time constraint of '2023 onward'. This implies that the user wants to search for repositories that contain both 'langchain' and 'llamaindex' and were created after 2023.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": "2023-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "langchain",
+          "llamaindex"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "langchain and llama index"
+    }
+  },
+  {
+    "id": 28,
+    "original_query": "Flask repositories recently updated with 300+ stars",
+    "rewritten_query": "flask repositories",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query, which is searching for Flask repositories. The omission of time and star count filters does not affect the core intent and main meaning of the query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query mentions 'flask' which is likely referring to the web framework, 'repositories' which is a type of GitHub entity, and 'recently updated' which implies a time constraint. The user also specifies '300 stars' which is a popularity filter. This information was used to extract the filters and rewrite the query.",
+      "filters": {
+        "language": "Flask",
+        "libraries": [
+          "Flask"
+        ],
+        "created_after": "2025-03-15",
+        "created_before": "2025-06-13",
+        "stars_min": 300,
+        "topics": [
+          "web framework",
+          "python"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "flask repositories"
+    }
+  },
+  {
+    "id": 29,
+    "original_query": "Top AI projects for beginners, created after 2022",
+    "rewritten_query": "AI projects for beginners",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main intent and meaning of the original query by focusing on the core topic of AI projects for beginners, ignoring the filter on time.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is looking for top AI projects for beginners that were created after 2022. This implies a search for popular AI projects with a specific focus on beginner-friendly content. The 'top' keyword suggests a popularity filter, which is set to 500 stars as a default threshold. The 'created after' filter is set to 2022-01-01 based on the user's request for projects created after 2022.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": "2022-01-01",
+        "created_before": null,
+        "stars_min": 500,
+        "topics": [
+          "AI",
+          "beginner"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "AI projects for beginners"
+    }
+  },
+  {
+    "id": 30,
+    "original_query": "Best NLP repositories with 2000+ stars",
+    "rewritten_query": "natural language processing",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent and main meaning of the original query, focusing on 'natural language processing' which is a key aspect of the original query's 'NLP' topic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query mentions 'best' and 'nlp' which indicates a specific topic. The word 'repositories' is implied as the user is searching for them. The phrase 'with 2000 stars' explicitly mentions a number of stars, so we can extract this value as the minimum number of stars.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 2000,
+        "topics": [
+          "nlp"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "natural language processing"
+    }
+  },
+  {
+    "id": 31,
+    "original_query": "Build REST APIs with Go, projects from 2021 onward",
+    "rewritten_query": "Go projects for building REST APIs",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent and main meaning of the original query, focusing on building REST APIs with Go, despite omitting the time filter.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "Extracted 'build rest apis' as the main topic, 'with go projects' as the programming language constraint, and 'from 2021 onward' as the date constraint.",
+      "filters": {
+        "language": "Go",
+        "created_after": "2021-01-01",
+        "topics": [
+          "REST API"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Go projects for building REST APIs"
+    }
+  },
+  {
+    "id": 32,
+    "original_query": "Python data scraping tools with 500+ stars",
+    "rewritten_query": "python data scraping tools",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and intent of the original query by focusing on the same domain-specific meaning (Python data scraping tools). The omission of the '500+ stars' filter does not affect the core intent.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user is asking for Python data scraping tools with a minimum of 500 stars. This implies a specific requirement for popularity. The query is domain-specific, mentioning a programming language and a task (data scraping).",
+      "filters": {
+        "language": "python",
+        "stars_min": 500
+      },
+      "query_vector_required": false,
+      "rewritten_query": "python data scraping tools"
+    }
+  },
+  {
+    "id": 33,
+    "original_query": "Projects fine-tuning Vietnamese language models",
+    "rewritten_query": "fine tuning vietnamese language models",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent and main meaning of the original query, focusing on fine-tuning Vietnamese language models, which is the primary subject of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query 'projects fine tuning vietnamese language models' is interpreted as a search for GitHub repositories related to fine-tuning Vietnamese language models. This involves extracting relevant keywords and filters from the query.",
+      "filters": {
+        "language": "Vietnamese",
+        "libraries": [
+          "transformers",
+          "pytorch",
+          "tensorflow",
+          "huggingface"
+        ],
+        "stars_min": null,
+        "topics": [
+          "language-models",
+          "fine-tuning",
+          "vietnamese"
+        ],
+        "created_after": null,
+        "created_before": null
+      },
+      "query_vector_required": false,
+      "rewritten_query": "fine tuning vietnamese language models"
+    }
+  },
+  {
+    "id": 34,
+    "original_query": "Text summarization repositories using Transformers",
+    "rewritten_query": "text summarization using transformers",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and intent of the original query, focusing on 'text summarization' and 'transformers', which are the core aspects of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user is looking for GitHub repositories related to text summarization using transformers. The query contains specific domain-specific keywords such as 'text summarization' and 'transformers', indicating a clear topic. This information will be used to extract relevant repositories.",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "transformers"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "text summarization"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "text summarization using transformers"
+    }
+  },
+  {
+    "id": 35,
+    "original_query": "Audio processing with deep learning using Python",
+    "rewritten_query": "audio processing with deep learning using python",
+    "true_label": true,
+    "llm_evaluate_think": "Both queries focus on the same main topic of 'audio processing with deep learning', and the difference in case sensitivity does not change the core intent or main meaning.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query contains domain-specific keywords like 'audio processing', 'deep learning', and 'python', which suggests a specific topic and relevant filters. The query is likely looking for repositories related to audio processing using deep learning techniques implemented in Python.",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "deep learning"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "audio processing",
+          "deep learning"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "audio processing with deep learning using python"
+    }
+  },
+  {
+    "id": 36,
+    "original_query": "Best OCR libraries with over 1000 stars",
+    "rewritten_query": "best ocr libraries",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main intent and meaning of the original query, focusing on the topic of OCR libraries, while ignoring the filter related to star count.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query contains a specific topic (OCR libraries) and a popularity filter (over 1000 stars). The intent is to search for the best OCR libraries on GitHub.",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "OCR"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 1000,
+        "topics": [
+          "best"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "best ocr libraries"
+    }
+  },
+  {
+    "id": 37,
+    "original_query": "AI deployment tutorial projects for cloud platforms",
+    "rewritten_query": "AI deployment tutorial projects for cloud platforms",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the same core intent and main meaning as the original query, as it includes the same main content and subject, including AI deployment, tutorial projects, and cloud platforms.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is asking for AI deployment tutorial projects for cloud platforms. The keywords 'ai', 'deployment', 'tutorial', and 'projects' indicate a search for educational resources on deploying AI models. The mention of 'cloud platforms' suggests a focus on cloud-based deployment. The intent is to find repositories related to AI deployment tutorials on cloud platforms.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "ai",
+          "deployment",
+          "tutorial",
+          "cloud-platforms"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "AI deployment tutorial projects for cloud platforms"
+    }
+  },
+  {
+    "id": 38,
+    "original_query": "Vietnamese news crawling projects with over 200 stars",
+    "rewritten_query": "vietnamese news crawling projects",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main intent and meaning of the original query by focusing on the key domain-specific details (Vietnamese news crawling projects). It ignores the time-related phrase (over 200 stars) as per the specified rule.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query contains the keyword 'vietnamese news crawling projects' which implies a specific domain of interest. The query also mentions 'over 200 stars' which is a filter for popularity. This indicates that the user is looking for repositories with a certain level of popularity in the specified domain.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 200,
+        "topics": [
+          "vietnamese news crawling projects"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "vietnamese news crawling projects"
+    }
+  },
+  {
+    "id": 39,
+    "original_query": "Machine learning with tabular data repositories",
+    "rewritten_query": "machine learning with tabular data",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent and main meaning of the original query by focusing on the same key domains (machine learning and tabular data).",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query 'machine learning with tabular data repositories' can be broken down into two main topics: machine learning and tabular data. The presence of 'repositories' indicates that the user is looking for a GitHub repository related to this topic. The query is specific and domain-oriented, suggesting that the user has a clear idea of what they are looking for. The absence of vague terms or popularity-related keywords implies that the user is not interested in the most popular repositories but rather in finding relevant ones.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "machine learning",
+          "tabular data"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "machine learning with tabular data"
+    }
+  },
+  {
+    "id": 40,
+    "original_query": "Speech-to-text libraries supporting Vietnamese",
+    "rewritten_query": "speech to text libraries supporting vietnamese",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query, including the key domain-specific details such as speech-to-text and Vietnamese support.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query 'speech to text libraries supporting vietnamese' is a specific and domain-related topic. The user is looking for libraries that support Vietnamese in speech-to-text functionality. The keywords 'speech to text', 'libraries', and 'vietnamese' are extracted to identify the topic and constraints. No filters are mentioned, so they are set to default or null values.",
+      "filters": {
+        "language": "Vietnamese",
+        "libraries": [
+          "speech to text"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "speech to text",
+          "vietnamese"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "speech to text libraries supporting vietnamese"
+    }
+  },
+  {
+    "id": 41,
+    "original_query": "Simple open-source chatbot written in Python",
+    "rewritten_query": "open source chatbot python",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and purpose of the original query, focusing on open-source chatbots written in Python.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query 'simple open source chatbot written in python' is a clear and specific request for a repository that meets certain criteria. It implies that the user is looking for an open-source chatbot written in Python, likely with a simple implementation. To infer this, I considered the keywords 'simple', 'open source', 'chatbot', and 'python', which are all relevant to the search.",
+      "filters": {
+        "language": "python",
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "open source chatbot python"
+    }
+  },
+  {
+    "id": 42,
+    "original_query": "Deepfake detection repositories with 1000+ stars",
+    "rewritten_query": "deepfake detection",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent and main meaning of the original query by focusing on the key topic of 'deepfake detection', which is the main subject of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query mentions 'deepfake detection', which is a specific domain-related topic. This implies that the user is looking for repositories related to this topic. Additionally, the query mentions 'repositories with 1000 stars', which indicates that the user wants to filter the results based on the number of stars. However, since the query explicitly mentions 'deepfake detection', it's clear that the user is looking for a specific domain-related topic, and the stars filter is a secondary constraint.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 1000,
+        "topics": [
+          "deepfake detection"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "deepfake detection"
+    }
+  },
+  {
+    "id": 43,
+    "original_query": "Real-time face recognition in Python with GPU support",
+    "rewritten_query": "real-time face recognition in Python",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent and main meaning of the original query by focusing on the key topic of real-time face recognition in Python, while omitting a specific technical detail (GPU support).",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user is looking for a GitHub repository that implements real-time face recognition in Python with GPU support. This implies a need for a Python library or framework that can utilize GPUs for efficient face recognition. The query contains domain-specific keywords such as 'real-time face recognition' and 'GPU support', indicating a clear topic and specific requirements.",
+      "filters": {
+        "language": "Python",
+        "libraries": [
+          "face_recognition",
+          "opencv-python",
+          "tensorflow",
+          "pytorch"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "face_recognition",
+          "gpu_acceleration",
+          "deep_learning"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "real-time face recognition in Python"
+    }
+  },
+  {
+    "id": 44,
+    "original_query": "Web frameworks in Rust created after 2023",
+    "rewritten_query": "Rust web frameworks",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent and main meaning of the original query by focusing on Rust web frameworks, ignoring the time filter (created after 2023).",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query mentions 'web frameworks' which indicates a specific domain, and 'Rust' which is a programming language. The phrase 'created after 2023' specifies a date filter. This information is used to extract the 'language', 'created_after', and 'topics' filters.",
+      "filters": {
+        "language": "Rust",
+        "libraries": [],
+        "created_after": "2023-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "web frameworks"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Rust web frameworks"
+    }
+  },
+  {
+    "id": 45,
+    "original_query": "Fine-tuning BERT with PyTorch - recommended repos",
+    "rewritten_query": "fine tuning bert with pytorch",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main intent of fine-tuning BERT with PyTorch, ignoring the request for 'recommended repos' which is a filter and not a topic-specific detail.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query contains domain-specific keywords 'fine tuning bert' and 'pytorch recommended repos', which indicates a specific topic. The query implies the need for repositories related to fine-tuning BERT models using PyTorch. The query also contains the word 'recommended', which suggests that the user is looking for popular or high-quality repositories.",
+      "filters": {
+        "language": "null",
+        "libraries": [
+          "pytorch"
+        ],
+        "created_after": "null",
+        "created_before": "null",
+        "stars_min": null,
+        "topics": [
+          "bert",
+          "fine-tuning"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "fine tuning bert with pytorch"
+    }
+  },
+  {
+    "id": 46,
+    "original_query": "Best open-source database management tools",
+    "rewritten_query": "open source database management tools",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main intent and meaning of the original query, focusing on 'open-source database management tools', which is the core subject of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is looking for the best open source database management tools, which implies a search for relevant repositories. The query contains domain-specific keywords like 'best', 'open source', and 'database management tools', indicating a clear topic and a specific requirement.",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "database management"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 500,
+        "topics": [
+          "database management",
+          "open source"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "open source database management tools"
+    }
+  },
+  {
+    "id": 47,
+    "original_query": "Popular Python repositories created in early 2024",
+    "rewritten_query": "popular python repositories",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query, which is searching for popular Python repositories.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "Extracted filters: language = 'python', created_after = '2024-01-01', created_before = '2024-06-13'. \n                    Assumed popularity by including the term 'popular'. Set stars_min = 500 as a default threshold.",
+      "filters": {
+        "language": "python",
+        "libraries": [],
+        "created_after": "2024-01-01",
+        "created_before": "2024-06-13",
+        "stars_min": 500,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "popular python repositories"
+    }
+  },
+  {
+    "id": 48,
+    "original_query": "Learn to build CLI tools in Rust from 2022 onward",
+    "rewritten_query": "Rust CLI tools",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query (CLI tools in Rust), ignoring the filter (time) which is not relevant to the main intent.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query 'learn to build cli tools in rust from 2022 onward' indicates a desire to find Rust-related repositories that focus on building command-line tools, with a specific interest in projects created after 2022. The query implies a need for repositories that are relevant to learning and building CLI tools in Rust, with an emphasis on recent projects.",
+      "filters": {
+        "language": "Rust",
+        "libraries": [],
+        "created_after": "2022-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "CLI tools",
+          "Rust"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Rust CLI tools"
+    }
+  },
+  {
+    "id": 49,
+    "original_query": "TensorFlow object detection projects with 500+ stars",
+    "rewritten_query": "tensorflow object detection projects",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic, purpose, and focus of the original query, which is TensorFlow object detection projects. The omission of the time and star count filter phrases does not affect the core intent and main meaning of the query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "Extracted filters related to popularity and object detection projects. Assumed a specific number of stars (500) based on the query.",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "tensorflow"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 500,
+        "topics": [
+          "object detection"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "tensorflow object detection projects"
+    }
+  },
+  {
+    "id": 50,
+    "original_query": "AI learning resources for university freshmen",
+    "rewritten_query": "AI learning resources for university freshmen",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the same core intent and main meaning as the original query, with no omitted or changed key domain-specific meaning.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user is searching for GitHub repositories related to AI learning resources for university freshmen. The query contains a specific topic (AI learning resources) and a target audience (university freshmen). The intent is to search for relevant repositories on GitHub.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "university",
+          "freshmen",
+          "AI",
+          "learning resources"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "AI learning resources for university freshmen"
+    }
+  },
+  {
+    "id": 51,
+    "original_query": "Project về sentiment analysis tiếng Việt, dùng PyTorch hoặc Huggingface",
+    "rewritten_query": "sentiment analysis using PyTorch and Hugging Face",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query captures the core intent of the original query, focusing on sentiment analysis, and the use of PyTorch and Hugging Face, which are the key technologies mentioned in the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user's query is asking for a project related to sentiment analysis, specifically using Python (PyTorch), Vietnamese (vit) as the language, and Hugging Face as the framework.",
+      "filters": {
+        "language": "vit",
+        "libraries": [
+          "pytorch"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "sentiment-analysis"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "sentiment analysis using PyTorch and Hugging Face"
+    }
+  },
+  {
+    "id": 52,
+    "original_query": "AI cho người mới học, viết bằng Python, được tạo sau năm 2021",
+    "rewritten_query": "python project after 2021",
+    "true_label": false,
+    "llm_evaluate_think": "The rewritten query omits important topical details, specifically the focus on AI for beginners and the technology domain (AI).",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query is in Vietnamese and can be translated to 'Who created a project like this in Python after 2021?' or 'Who created a similar project in Python after 2021?' The user is looking for a project similar to the one they are currently working on, created after 2021, in Python. The key phrases 'hc vit bng' can be translated to 'similar to' or 'like'.",
+      "filters": {
+        "language": "python",
+        "libraries": [],
+        "created_after": "2021-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "python project after 2021"
+    }
+  },
+  {
+    "id": 53,
+    "original_query": "Tìm các repo Python về AI đang hot với hơn 1000 stars",
+    "rewritten_query": "Python AI repository in Vietnam",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic of the original query, which is 'Python AI repository'. Although it does not include time or star count, it still conveys the intent of searching for Python AI repositories.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query contains a mix of Vietnamese and English keywords. We can infer the intent is to search for a popular Python repository related to Artificial Intelligence (AI) in Vietnam. The mention of 'hot' and '1000 stars' implies the user is looking for a repository with a high number of stars, which we interpret as a popularity filter.",
+      "filters": {
+        "language": "python",
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 1000,
+        "topics": [
+          "ai",
+          "vi",
+          "hn"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Python AI repository in Vietnam"
+    }
+  },
+  {
+    "id": 54,
+    "original_query": "Có thư viện xử lý ảnh bằng Python nào có trên 500 sao không?",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is in Vietnamese and contains several keywords. The user is looking for a repository that uses Python and has more than 500 stars. The keywords 'c th vin x l nh bng python' are translated to 'use Python' and 'c trn 500 sao khng' is translated to 'more than 500 stars'.",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "null"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 500,
+        "topics": [
+          "null"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 55,
+    "original_query": "Dự án chatbot sử dụng Transformer và được cập nhật sau 2023",
+    "rewritten_query": "transformer chatbot C++",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic of the original query, which is a chatbot project using Transformer. Although it omits the language and time-related phrases, it correctly captures the core intent and main meaning of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is in Vietnamese. The intent is to search for repositories. The user is looking for a chatbot that uses a transformer in C++ after 2023. The language is assumed to be Vietnamese. The user is looking for a specific technology (transformer) and programming language (C++), and also a specific timeframe (after 2023).",
+      "filters": {
+        "language": "c++",
+        "libraries": [
+          "transformer"
+        ],
+        "created_after": "2023-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "chatbot",
+          "ai"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "transformer chatbot C++"
+    }
+  },
+  {
+    "id": 56,
+    "original_query": "Repositories Machine Learning viết bằng PyTorch, từ 2020 trở đi",
+    "rewritten_query": "repositories for Vision Transformers with PyTorch",
+    "true_label": false,
+    "llm_evaluate_think": "The rewritten query omits the time filter and the language filter, but more importantly, it changes the main topic from Machine Learning to Vision Transformers, which is a specific subset of Machine Learning. This change in topic alters the core intent and main meaning of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is a mix of Vietnamese and English. It can be broken down as follows: 'repositories' is the primary topic, 'machine learning' and 'vit' are related to the field of study, 'bng' is likely a typo or a specific term, 'pytorch' is a popular deep learning framework, 't' is unclear, '2020' implies a time constraint, and 'tr i' is unclear. Based on the presence of 'machine learning', 'vit', and 'pytorch', it's inferred that the user is looking for repositories related to Vision Transformers (ViT) and PyTorch.",
+      "filters": {
+        "language": "pytorch",
+        "libraries": [
+          "pytorch"
+        ],
+        "created_after": "2020-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "machine learning",
+          "vit"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "repositories for Vision Transformers with PyTorch"
+    }
+  },
+  {
+    "id": 57,
+    "original_query": "Thư viện React component phổ biến, có trên 2000 stars",
+    "rewritten_query": "React component repository with 2000 stars",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query, which is a popular React component library. Although the rewritten query omits the Vietnamese language and includes a specific star count, these differences are related to filters (time and stars) and do not affect the core intent and main meaning of the query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query contains specific keywords related to React and a high number of stars (2000). The user is likely looking for a high-quality, popular React component repository. I extracted the language as 'JavaScript' (implied by the mention of React) and the topic as 'React component'. I also inferred the filter for the minimum number of stars as 2000.",
+      "filters": {
+        "language": "JavaScript",
+        "libraries": [
+          "React"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 2000,
+        "topics": [
+          "React component"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "React component repository with 2000 stars"
+    }
+  },
+  {
+    "id": 58,
+    "original_query": "Các repo nổi bật về trực quan hóa dữ liệu, có ít nhất 1000 stars",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is in Vietnamese and can be translated to 'Find a popular repository with more than 1000 stars'. The query contains a keyword 'cc repo' which is likely a typo or a shorthand for 'C/C++ repository'. The query also mentions 'ni bt v' which is a vague term, but it can be interpreted as 'not bad' or 'good'. The query also contains 'trc quan ha' which means 'before popular' or 'less popular'. However, the query focuses on finding a popular repository with more than 1000 stars. The 'd liu c t nht' phrase is likely a typo or a Vietnamese phrase that means 'has a lot of traffic' or 'highly trafficked'.",
+      "filters": {
+        "language": "C/C++",
+        "libraries": [],
+        "created_after": "null",
+        "created_before": "null",
+        "stars_min": 1000,
+        "topics": []
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 59,
+    "original_query": "Gợi ý các thư viện xử lý ngôn ngữ tự nhiên với hơn 500 sao",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is in Vietnamese and appears to be asking for repositories with more than 500 stars. The phrase 'gi cc th vin x l ngn ng t nhin vi hn 500 sao' can be translated to 'giải thích về những gì nổi tiếng vì nhiều sao' which means 'explain what's popular because of many stars'. The user is likely looking for repositories with a high number of stars, and the threshold is set to 500.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 500,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 60,
+    "original_query": "Dự án AI mới được cập nhật trong vòng 6 tháng gần nhất",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is in Vietnamese, indicating a search for repositories in the Vietnamese language. The query contains the phrase 'd n ai mi c cp nht trong vng 6 thng gn nht', which translates to 'who has the most stars in the last 6 months'. This implies a search for popular repositories. Assuming the user is searching for repositories with a minimum of 500 stars, as per the guidelines for star-related filters.",
+      "filters": {
+        "language": "Vietnamese",
+        "libraries": [],
+        "created_after": "2025-01-01",
+        "created_before": "2025-06-13",
+        "stars_min": 500,
+        "topics": []
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 61,
+    "original_query": "Project sentiment analysis tiếng Việt dùng Python, sau năm 2022",
+    "rewritten_query": "natural language processing, sentiment analysis, vietnamese text, python",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main intent and meaning of the original query, focusing on sentiment analysis, natural language processing, and Vietnamese text using Python, despite omitting time-related filters.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query is in Vietnamese and translates to 'project sentiment analysis on Vietnamese using Python after 2022'. The intent is to search for repositories related to sentiment analysis on Vietnamese text using Python, with a focus on projects created after 2022. The language is extracted as 'Python' and the topic is 'sentiment analysis on Vietnamese'. The date constraint is 'after 2022', which implies 'created_after' = '2022-01-01' and 'created_before' = null. The query is domain-specific and has clear topic, so 'query_vector_required' is set to false.",
+      "filters": {
+        "language": "Python",
+        "libraries": [],
+        "created_after": "2022-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "sentiment analysis on Vietnamese"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "natural language processing, sentiment analysis, vietnamese text, python"
+    }
+  },
+  {
+    "id": 62,
+    "original_query": "Repository C++ cho tính toán hiệu năng cao, từ năm 2021",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user is searching for a repository with a high number of stars created in the year 2021. The query contains specific keywords such as 'tnh ton hiu nng cao' which implies a high number of stars, and 'nm 2021' which specifies the year of creation. We assume 'c' is a typo and the user meant to type 'cho', which is a Vietnamese word for 'for' or 'in'.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": "2021-01-01",
+        "created_before": "2021-12-31",
+        "stars_min": 500,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 63,
+    "original_query": "Repo Go cho người mới bắt đầu học, có dưới 500 stars",
+    "rewritten_query": "Go repository for beginners with high difficulty and high stars",
+    "true_label": false,
+    "llm_evaluate_think": "The rewritten query misses key details like the constraint of 'dưới 500 stars' (less than 500 stars) and the focus on 'người mới bắt đầu học' (for beginners), and instead includes 'high difficulty and high stars' which is a contradictory and vague description.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query is in Vietnamese and can be translated to 'repo Go cho người mới bắt đầu với độ khó cao và có 500 sao'. We extracted the following filters: language (Go), stars_min (500), and implicitly, the query refers to popularity (500 stars).",
+      "filters": {
+        "language": "Go",
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 500,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Go repository for beginners with high difficulty and high stars"
+    }
+  },
+  {
+    "id": 64,
+    "original_query": "Deep learning với Keras, tạo sau 2021, có ít nhất 100 stars",
+    "rewritten_query": "deep learning using Keras",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query maintains the core intent of the original query, focusing on 'deep learning' and 'Keras', and ignores the time and star count filters which are not included in the rewritten query rule.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query is in Vietnamese and mentions 'deep learning' with 'vi keras', indicating a search for repositories related to deep learning using the Keras framework in Vietnamese. The phrase 'to sau 2021' translates to 'after 2021', implying a search for recent repositories. The phrase 'c t nht 100 stars' translates to 'with at least 100 stars', indicating a popularity filter.",
+      "filters": {
+        "language": "vi",
+        "libraries": [
+          "keras"
+        ],
+        "created_after": "2021-01-01",
+        "created_before": null,
+        "stars_min": 100,
+        "topics": [
+          "deep learning"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "deep learning using Keras"
+    }
+  },
+  {
+    "id": 65,
+    "original_query": "Top repo Javascript đang thịnh hành với trên 2000 sao",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "Extracted 'top repo' as a specific type of repository, 'javascript' as the programming language, and 'trên 2000 sao' as a filter for the number of stars. The phrase 'ang thnh hnh vi trn' was not directly related to any filter, but 'trên 2000 sao' implies a popularity threshold, so we set 'stars_min' to 2000.",
+      "filters": {
+        "language": "javascript",
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 2000,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 66,
+    "original_query": "Dự án mới về Stable Diffusion, cập nhật trong năm 2024",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is in Vietnamese. We can translate it to English and extract the relevant information. The translation is: 'stable diffusion model in 2024'. We can infer that the user is looking for repositories related to Stable Diffusion, a type of AI model, and they want to find the most recent or popular ones. We assume that the user wants to search for repositories created after 2024, as they mentioned 'năm 2024'.",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "stable-diffusion"
+        ],
+        "created_after": "2024-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "stable-diffusion",
+          "ai",
+          "model"
+        ]
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 67,
+    "original_query": "Thư viện Python crawl dữ liệu từ web, có hơn 300 stars",
+    "rewritten_query": "python web crawling",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query, which is about using Python for web crawling. The original query includes information about the library's popularity (over 300 stars), but this is not a critical aspect of the query's intent and is ignored for the purpose of this evaluation.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user's query is seeking Python repositories with web crawling capabilities, specifically with more than 300 stars. The query contains a mix of Vietnamese and English keywords, which are interpreted as follows: 'th vin' is likely a typo or a non-standard keyword, but it's ignored in favor of the more common 'python'. 'd liu t web c hn' translates to 'crawl web data in China', which is a key constraint for the search. The '300 stars' filter is applied to narrow down the results.",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "web_crawler"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 300,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "python web crawling"
+    }
+  },
+  {
+    "id": 68,
+    "original_query": "Dự án xử lý video real-time dùng Python, tạo sau 2022",
+    "rewritten_query": "real-time video processing python",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main intent and meaning of the original query, focusing on real-time video processing using Python, ignoring the time-related phrase.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query 'd n x l video real time dng python to sau 2022' can be broken down into several components: \n- 'd n x l' might be a typo or a colloquial expression, but it seems to imply a search for something related to 'video' or 'real-time'. \n- 'real time' is a clear indication of a real-time processing or streaming requirement.\n- 'dng' likely means 'doing' or 'using', implying the user is looking for a Python solution.\n- 'python to' could be interpreted as a search for Python repositories or tools.\n- 'sau 2022' translates to 'after 2022', indicating a search for recent repositories created after 2022.\n- The overall query seems to be asking for a Python-based real-time video processing solution created after 2022.",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "null"
+        ],
+        "created_after": "2022-01-01",
+        "created_before": "null",
+        "stars_min": null,
+        "topics": [
+          "real-time",
+          "video"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "real-time video processing python"
+    }
+  },
+  {
+    "id": 69,
+    "original_query": "Repo mã nguồn mở phát hiện bất thường (anomaly detection), dùng PyTorch",
+    "rewritten_query": "anomaly detection using PyTorch",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the same core intent and main meaning of the original query, focusing on anomaly detection using PyTorch, which is the main topic and purpose of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is Vietnamese and appears to be searching for a repository related to anomaly detection using PyTorch. The query contains keywords like \"repo\" (repository), \"m\" (machine learning or anomaly detection), \"ngun\" (anomaly), \"pht hin\" (detection), \"bt\" (using), and \"thng\" (thing or tool). The presence of \"dng PyTorch\" suggests that the user is looking for a repository that uses PyTorch for anomaly detection. The query is specific and contains domain-specific keywords, so it is classified as a search for a repository with a clear topic.",
+      "filters": {
+        "language": "Python",
+        "libraries": [
+          "PyTorch"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "anomaly detection"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "anomaly detection using PyTorch"
+    }
+  },
+  {
+    "id": 70,
+    "original_query": "Java repositories được tạo trong năm 2023",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query 'java repositories c to trong nm 2023' can be interpreted as a search for Java repositories created within 2023. The Vietnamese phrase 'trong nm 2023' translates to 'in 2023', which implies a search for repositories created during this year. The query also mentions 'c to', which likely refers to a specific topic or keyword related to Java, but it's unclear what this phrase means. Therefore, we'll assume it's a keyword and include it in the filters.",
+      "filters": {
+        "language": "java",
+        "libraries": [],
+        "created_after": "2023-01-01",
+        "created_before": "2023-12-31",
+        "stars_min": null,
+        "topics": [
+          "c to"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 71,
+    "original_query": "Thư viện phân loại hình ảnh với hơn 2000 stars",
+    "rewritten_query": "repositories with high popularity",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query 'repositories with high popularity' captures the main intent of the original query, which is related to image classification libraries. Although the rewritten query omits specific details about image classification and popularity (2000 stars), it still conveys the core idea of searching for a popular library.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query is in Vietnamese and asks for repositories that have more than 2000 stars. The keywords 'th vin phn loi hnh nh vi hn' can be translated to 'top repositories' or 'repositories with high popularity'. This implies that the user is looking for popular repositories. The filter 'stars_min' is set to 2000 based on the user's explicit mention of the number of stars. The query is rewritten to focus on the domain-specific keywords.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 2000,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "repositories with high popularity"
+    }
+  },
+  {
+    "id": 72,
+    "original_query": "Repo dạy reinforcement learning cơ bản với Python",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query 'repo dy reinforcement learning c bn vi python' contains a mix of Vietnamese and English keywords, indicating a search for repositories related to reinforcement learning in Python. The phrase 'c bn' is a common Vietnamese phrase for 'good' or 'useful', suggesting the user is looking for high-quality repositories. The language filter is inferred to be 'Python'.",
+      "filters": {
+        "language": "Python",
+        "libraries": [
+          "reinforcement learning"
+        ],
+        "created_after": "2024-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "reinforcement learning"
+        ]
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 73,
+    "original_query": "Repo sử dụng Huggingface Transformers, có trên 1000 sao",
+    "rewritten_query": "Hugging Face Transformers",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query, which is related to Huggingface Transformers.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user is searching for a repository that uses Hugging Face Transformers and has more than 1000 stars. The query mentions 's dng' which could be a typo or a language-specific term, but based on the context, it seems to be related to Vietnamese, so it's assumed to be a language filter. The rewritten query is focused on the domain-specific keywords 'Hugging Face Transformers'.",
+      "filters": {
+        "language": "vi",
+        "libraries": [
+          "transformers"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 1000,
+        "topics": [
+          "hugging_face",
+          "transformers"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Hugging Face Transformers"
+    }
+  },
+  {
+    "id": 74,
+    "original_query": "Repositories về hệ thống gợi ý, viết bằng Python, cập nhật gần đây",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user's query is Vietnamese and translates to 'repositories with high things using Python code newly generated recently'. I assumed the user is looking for Python repositories that are popular or have high stars, and were created recently. The 'h thng gi' phrase translates to 'high things' or 'popular', and 'vit bng' means 'using'. The 'nht gn y' phrase translates to 'newly generated recently'.",
+      "filters": {
+        "language": "python",
+        "libraries": [],
+        "created_after": "2025-06-06",
+        "created_before": "2025-06-13",
+        "stars_min": 500,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 75,
+    "original_query": "Công cụ tối ưu hóa mô hình học sâu dùng TensorFlow",
+    "rewritten_query": "tensorflow image processing user interface",
+    "true_label": true,
+    "llm_evaluate_think": "Although the rewritten query omits time and stars-related phrases, it preserves the main topic and focus on TensorFlow, which is a key domain-specific detail in the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query contains Vietnamese keywords that can be translated to English as 'cute UI for image processing using tensorflow'. We assume the user is looking for repositories that use TensorFlow for image processing and have a cute or user-friendly UI.",
+      "filters": {
+        "language": "tensorflow",
+        "libraries": [
+          "tensorflow"
+        ],
+        "stars_min": 500,
+        "topics": [
+          "tensorflow",
+          "image processing",
+          "user interface"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "tensorflow image processing user interface"
+    }
+  },
+  {
+    "id": 76,
+    "original_query": "Chatbot đơn giản viết bằng Node.js, dưới 500 sao",
+    "rewritten_query": "chatbot using Node.js",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and purpose of the original query, focusing on 'chatbot' and 'Node.js'. Although the original query includes a filter (dưới 500 sao), which is ignored in the rewritten query, the core intent and main meaning of the query are maintained.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is in Vietnamese, asking for a chatbot repository with more than 500 stars using Node.js. The query mentions 'n gin vit bng', which translates to 'with' in English, and 'node js', indicating a specific programming language. The phrase '500 sao' explicitly mentions a star count. The system interprets this as a request for a popular chatbot repository using Node.js with at least 500 stars.",
+      "filters": {
+        "language": "Node.js",
+        "libraries": [
+          "chatbot"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 500,
+        "topics": [
+          "chatbot"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "chatbot using Node.js"
+    }
+  },
+  {
+    "id": 77,
+    "original_query": "Thư viện xử lý tiếng Nhật bằng Python, có nhiều lượt sao",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user's query is in Vietnamese and seems to be asking for popular repositories using Python. The phrase 'th vin x l ting nht bng python c nhiu lt sao' can be translated to 'what are popular repositories using Python with many stars'. I'm assuming the user is looking for repositories with a high number of stars that use Python. Since the query mentions 'nhiu lt sao' (many stars), I'm setting 'stars_min' to a default value of 500 as a threshold for popularity.",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "null"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 500,
+        "topics": [
+          "null"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 78,
+    "original_query": "Repository sử dụng Langchain và LlamaIndex, tạo sau 2023",
+    "rewritten_query": "LangChain LlamaIndex",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main intent and meaning of the original query by focusing on the key technologies (Langchain and LlamaIndex) without omitting any important topical or technical details.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is asking for repositories that use LangChain and LlamaIndex, created after 2023. The query mentions 's dng', which is likely a typo or a non-standard way of saying 'sử dụng' (using). LangChain and LlamaIndex are likely domain-specific keywords, so we'll include them in the rewritten query. The date 'sau 2023' implies that we should filter for repositories created after 2023.",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "LangChain",
+          "LlamaIndex"
+        ],
+        "created_after": "2023-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "LangChain LlamaIndex"
+    }
+  },
+  {
+    "id": 79,
+    "original_query": "Repo Flask mới cập nhật gần đây, có trên 300 sao",
+    "rewritten_query": "Flask repository",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and purpose of the original query, focusing on Flask repositories, and ignores the time and star count filters.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "I extracted the intent as searching for a repository. The user is looking for a Flask repository with a lot of stars. I inferred the language as Python (mi cp nht) and the popularity as more than 300 stars. I set created_after to null and created_before to null as there's no mention of a specific date.",
+      "filters": {
+        "language": "Python",
+        "libraries": [
+          "Flask"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 300,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Flask repository"
+    }
+  },
+  {
+    "id": 80,
+    "original_query": "Dự án AI nổi bật cho người mới bắt đầu, từ 2022",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query 'd n ai ni bt cho ngi mi bt u t 2022' is a Vietnamese phrase that translates to 'who has a repository created in 2022'. It's an exploratory query with a clear topic and a specific constraint on the creation date. The query vector is not required because the query already has a clear topic and constraints.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": "2022-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 81,
+    "original_query": "Repositories tốt nhất cho NLP, có trên 2000 sao",
+    "rewritten_query": "NLP C transformer",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent of the original query, which is related to Natural Language Processing (NLP). Although the rewritten query omits the filter 'có trên 2000 sao' (repositories with more than 2000 stars), it does not miss any key domain-specific meaning or topical details, and it maintains the focus on NLP.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query 'repositories tt nht cho nlp c trn 2000 sao' is interpreted as a search for popular repositories related to Natural Language Processing (NLP) in C, with more than 2000 stars. The keywords 'tt nht' are assumed to be a Vietnamese phrase for 'popular' or 'trending', and 'cho nlp c trn' translates to 'for NLP C transformer'. The number '2000 sao' is translated to '2000 stars'.",
+      "filters": {
+        "language": "C",
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 2000,
+        "topics": [
+          "NLP"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "NLP C transformer"
+    }
+  },
+  {
+    "id": 82,
+    "original_query": "REST API với Go, tạo sau năm 2021",
+    "rewritten_query": "REST API in Go",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query 'REST API in Go' preserves the main topic and focus of the original query, which is about REST API with Go. The omission of the time filter 'tạo sau năm 2021' is allowed according to the rules.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is in Vietnamese and asks for REST API repositories written in Go, created after 2021. The query contains the phrase 'to sau nm 2021', which translates to 'after year 2021'. This phrase implies a date filter, and we assume the user wants to search for repositories created after January 1, 2021. The query also contains the phrase 'rest api vi go', which can be interpreted as a search for REST API repositories written in Go.",
+      "filters": {
+        "language": "Go",
+        "libraries": [
+          "REST API"
+        ],
+        "created_after": "2021-01-01",
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "REST API",
+          "Go"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "REST API in Go"
+    }
+  },
+  {
+    "id": 83,
+    "original_query": "Công cụ scraping dữ liệu dùng Python, có trên 500 sao",
+    "rewritten_query": "python web scraping",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main intent of using Python for data scraping, ignoring the filter of the number of stars.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query contains keywords related to web scraping and Python. The phrase 'cng c scraping d liu dng python' implies a search for repositories that use Python for web scraping. The term 'trn 500 sao' translates to 'over 500 stars', indicating a filter for repositories with at least 500 stars. The user is likely looking for popular Python repositories for web scraping.",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "web scraping"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 500,
+        "topics": [
+          "web scraping",
+          "python"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "python web scraping"
+    }
+  },
+  {
+    "id": 84,
+    "original_query": "Dự án Việt hóa mô hình ngôn ngữ lớn, cập nhật gần đây",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user's query is in Vietnamese and appears to be asking for recent popular repositories. The words \"d n vit\" translate to \"in Vietnam\" or \"about Vietnam\", \"ha m hnh\" means \"popular\" or \"famous\", \"ngn ng ln cp\" translates to \"repositories\" or \"projects\", \"nht\" means \"new\", \"gn y\" translates to \"every year\" or \"recently\". Based on the context, it is assumed that the user wants to find popular repositories related to Vietnam, created recently.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": "2025-03-15",
+        "created_before": "2025-06-13",
+        "stars_min": 500,
+        "topics": []
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 85,
+    "original_query": "Thư viện text summarization nổi bật, dùng Transformer",
+    "rewritten_query": "text summarization using transformer models",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent and main meaning of the original query, focusing on text summarization using Transformer models, which aligns with the original query's mention of a 'thư viện' (library) for text summarization using Transformer.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query is asking for repositories related to text summarization using transformer models. The query contains specific keywords like 'text summarization' and 'transformer', which indicates a clear topic and domain-specific constraints.",
+      "filters": {
+        "language": "C++",
+        "libraries": [
+          "transformer"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "text summarization",
+          "transformer"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "text summarization using transformer models"
+    }
+  },
+  {
+    "id": 86,
+    "original_query": "Dự án xử lý âm thanh bằng deep learning, viết bằng Python",
+    "rewritten_query": "deep learning vision transformer python",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query, which is deep learning and Python, and also includes a relevant key term 'vision transformer'.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user is searching for a deep learning repository using the Vision Transformer (ViT) model with Python. The query mentions 'd n x l m thanh bng', which is a Vietnamese phrase that translates to 'deep learning'. The user also specifies 'Vit bng Python', which is a Vietnamese phrase that translates to 'ViT with Python'.",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "vit"
+        ],
+        "topics": [
+          "deep learning",
+          "vision transformer"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "deep learning vision transformer python"
+    }
+  },
+  {
+    "id": 87,
+    "original_query": "Top thư viện OCR mã nguồn mở, có trên 1000 stars",
+    "rewritten_query": "Vietnamese OCR and Vietnamese content repositories",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main intent of finding open-source OCR libraries, focusing on Vietnamese content, which aligns with the original query's core intent.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query 'top th vin ocr m ngun m c trn 1000 stars' is a Vietnamese query that translates to 'top repositories with Vietnamese OCR and Vietnamese content over 1000 stars'. The intent is clear, and it's a search for popular repositories with specific features. \n  The user is looking for repositories with Vietnamese OCR functionality and content, and they want to see only those with more than 1000 stars. The query also implies a search for popular or highly-starred repositories.\n  Based on the query, we can infer that the user is interested in finding repositories that are both functional (with Vietnamese OCR) and content-wise (with Vietnamese content).",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 1000,
+        "topics": [
+          "Vietnamese OCR",
+          "Vietnamese content"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Vietnamese OCR and Vietnamese content repositories"
+    }
+  },
+  {
+    "id": 88,
+    "original_query": "Repo hướng dẫn deploy mô hình AI trên cloud",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query contains keywords related to deployment and cloud computing, specifically 'hng dn' which is likely 'Hanoi DevNet', a popular Vietnamese developer community. The presence of 'deploy' and 'cloud' suggests the user is looking for repositories related to cloud-based deployment. The query also contains 'm hnh ai' which translates to 'machine learning' in English, indicating a possible interest in AI or machine learning related repositories. The query is likely looking for repositories related to cloud-based deployment and machine learning, possibly in the context of Hanoi DevNet.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": []
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 89,
+    "original_query": "Project crawl báo tiếng Việt với hơn 200 stars",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query 'project crawl bo ting vit vi hn 200 stars' is interpreted as a search for a repository related to crawling, with specific language or location preferences. The mention of '200 stars' is used to set the minimum number of stars for the filter.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 200,
+        "topics": []
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 90,
+    "original_query": "Repo xử lý dữ liệu bảng (tabular) cho machine learning",
+    "rewritten_query": "machine learning tabular",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent and main meaning of the original query, focusing on machine learning and tabular data processing.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user is looking for a GitHub repository that is related to machine learning and involves tabular data. The phrase 'repo x l d liu bng' is likely a Vietnamese expression meaning 'repository of Liu Bang', but it's unclear what 'Liu Bang' refers to in this context. Assuming it's a keyword or a topic, we'll include it in the search. The phrase 'tabular cho machine learning' translates to 'tabular for machine learning', indicating the user is interested in repositories that deal with tabular data and machine learning.",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "tabular"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "machine learning",
+          "Liu Bang"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "machine learning tabular"
+    }
+  },
+  {
+    "id": 91,
+    "original_query": "Các thư viện speech-to-text nổi bật dùng tiếng Việt",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query contains various Vietnamese keywords related to speech-to-text technology. We can infer the topic of the repository search is likely focused on speech recognition or natural language processing. The query mentions 'cc' which could imply 'conversational AI', 'vin' is likely a reference to Vietnam, and 'speech to text' is a clear topic. The query also mentions 'ni bt dng ting vit' which translates to 'new uses for speech recognition' or 'new applications for speech recognition'. We can assume the user is looking for repositories related to speech-to-text technology, possibly with a focus on Vietnam or conversational AI.",
+      "filters": {
+        "language": "vi",
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "speech-to-text",
+          "conversational-ai"
+        ]
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 92,
+    "original_query": "Chatbot mã nguồn mở đơn giản, viết bằng Python",
+    "rewritten_query": "Python chatbot",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query, which is a simple open-source chatbot written in Python.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query contains keywords related to chatbots and Python programming. It appears to be a search query for Python-based chatbot repositories. The keywords 'chatbot', 'm', 'ngun', 'm', 'n', 'gin', and 'vit' are likely typos or variations of Vietnamese words, which are ignored in the filtering process. The keyword 'bng' is likely a typo or a variation of 'bang', which is a Vietnamese word for 'using' or 'with'. The keyword 'python' is extracted as the programming language filter.",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "chatbot"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "chatbot"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Python chatbot"
+    }
+  },
+  {
+    "id": 93,
+    "original_query": "Dự án phát hiện deepfake, có hơn 1000 stars",
+    "rewritten_query": "deepfake",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main topic and focus of the original query, which is related to deepfake detection. The omission of time and star count is acceptable according to the provided rules.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query contains several domain-specific keywords: 'd n pht hin', 'deepfake', and 'c hn'. These keywords are related to natural language processing and computer vision. The user also mentions '1000 stars', which implies a popularity filter. However, since the query does not explicitly refer to popularity, the popularity filter is not applied. The query is specific and domain-aware, so the query vector is not required.",
+      "filters": {
+        "language": null,
+        "libraries": [
+          "deepfake"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 1000,
+        "topics": [
+          "deepfake"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "deepfake"
+    }
+  },
+  {
+    "id": 94,
+    "original_query": "Nhận diện khuôn mặt real-time dùng Python, có GPU support",
+    "rewritten_query": "real-time machine translation using Python with GPU support",
+    "true_label": false,
+    "llm_evaluate_think": "The rewritten query changes the main topic from 'Nhận diện khuôn mặt' (face recognition) to 'machine translation', which is a different domain-specific meaning.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "Extracted intent is 'search_repository' based on the user's query. The query is about finding a real-time MT (Machine Translation) system using Python with GPU support. The keywords 'nhn', 'din', 'khun', 'mt', 'real-time', 'dng', 'python', 'gpu' are extracted for further analysis.",
+      "filters": {
+        "language": "python",
+        "libraries": [
+          "gpu"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "machine-translation",
+          "real-time",
+          "gpu"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "real-time machine translation using Python with GPU support"
+    }
+  },
+  {
+    "id": 95,
+    "original_query": "Ví dụ Rust framework cho web, cập nhật trong năm 2023",
+    "rewritten_query": "Rust web framework",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the main intent and meaning of the original query by focusing on the core topic of Rust web frameworks. Although the rewritten query omits time-related information, this does not affect the core intent.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The query is in Vietnamese and asks for a Rust framework for web development that was created in 2023. The user is likely looking for a web framework written in Rust that was popular or widely used in 2023. We will assume the user is looking for a framework with at least 500 stars, as the query implies popularity. We will also assume the user wants to search for repositories created in 2023.",
+      "filters": {
+        "language": "Rust",
+        "libraries": [
+          "framework"
+        ],
+        "created_after": "2023-01-01",
+        "created_before": "2023-12-31",
+        "stars_min": 500,
+        "topics": [
+          "web development",
+          "Rust"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "Rust web framework"
+    }
+  },
+  {
+    "id": 96,
+    "original_query": "Thư viện fine-tune BERT bằng PyTorch",
+    "rewritten_query": "fine-tuning BERT using PyTorch",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent and main meaning of the original query. Although the rewritten query uses more general terms, it still conveys the focus on fine-tuning BERT using PyTorch, which is the main topic of the original query.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query 'th vin fine tune bert bng pytorch' is interpreted as a search for repositories related to fine-tuning BERT using PyTorch. The query mentions 'th vin', which is likely a Vietnamese phrase, but the main focus is on fine-tuning BERT and using PyTorch. Therefore, the intent is to search for repositories that involve these specific topics.",
+      "filters": {
+        "language": "null",
+        "libraries": [
+          "PyTorch"
+        ],
+        "created_after": "null",
+        "created_before": "null",
+        "stars_min": "null",
+        "topics": [
+          "BERT",
+          "fine-tuning"
+        ]
+      },
+      "query_vector_required": "false",
+      "rewritten_query": "fine-tuning BERT using PyTorch"
+    }
+  },
+  {
+    "id": 97,
+    "original_query": "Repo mã nguồn mở về quản lý database tốt nhất",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user is searching for a repository related to database technology, likely in Vietnamese. The query mentions 'database' and 'tt nht', which is a Vietnamese phrase for 'technology'. The user is likely looking for a repository that is popular or well-known in the database technology space.",
+      "filters": {
+        "language": null,
+        "libraries": [],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": null,
+        "topics": [
+          "database",
+          "tt nht"
+        ]
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 98,
+    "original_query": "Dự án Python nổi bật đầu năm 2024, có trên 1000 sao",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query 'd n python ni bt u nm 2024 c trn 1000 sao' is a Vietnamese query that translates to 'find repositories with Python, created in 2024, with more than 1000 stars'. We extracted the language as 'Python', the year as 2024, and the minimum number of stars as 1000.",
+      "filters": {
+        "language": "Python",
+        "libraries": [
+          "null"
+        ],
+        "created_after": "2024-01-01",
+        "created_before": "2024-12-31",
+        "stars_min": 1000,
+        "topics": [
+          "null"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 99,
+    "original_query": "Học viết CLI bằng Rust với các repo được tạo sau 2022",
+    "rewritten_query": "",
+    "true_label": false,
+    "llm_evaluate_think": "Rewritten query is empty, likely too vague or generic.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user query 'hc vit cli bng rust vi cc repo c to sau 2022' can be broken down as follows: 'hc vit' is likely a Vietnamese phrase, possibly 'học vít' meaning 'learn or study', and 'cli' refers to Command-Line Interface. The user is looking for Rust repositories created after 2022. The query is likely an exploratory query, and the user is looking for repositories that are popular or well-known.",
+      "filters": {
+        "language": "Rust",
+        "libraries": [
+          "CLI"
+        ],
+        "created_after": "2022-01-01",
+        "stars_min": 500,
+        "topics": [
+          "Command-Line Interface"
+        ]
+      },
+      "query_vector_required": true,
+      "rewritten_query": ""
+    }
+  },
+  {
+    "id": 100,
+    "original_query": "Project TensorFlow object detection với hơn 500 stars",
+    "rewritten_query": "tensorflow object detection",
+    "true_label": true,
+    "llm_evaluate_think": "The rewritten query preserves the core intent and main meaning of the original query, focusing on the key topic of TensorFlow object detection, while ignoring time and star count details.",
+    "llm_output": {
+      "intent": "search_repository",
+      "llm_thinking": "The user is searching for a TensorFlow project related to object detection in Vietnam with at least 500 stars. The query mentions 'hn' which is a Vietnamese abbreviation for 'Hà Nội', implying a search for projects in Vietnam. The mention of '500 stars' explicitly specifies a minimum number of stars.",
+      "filters": {
+        "language": "tensorflow",
+        "libraries": [
+          "tensorflow"
+        ],
+        "created_after": null,
+        "created_before": null,
+        "stars_min": 500,
+        "topics": [
+          "object detection",
+          "vi"
+        ]
+      },
+      "query_vector_required": false,
+      "rewritten_query": "tensorflow object detection"
+    }
+  }
+]
