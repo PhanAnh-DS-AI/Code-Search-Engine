@@ -10,8 +10,15 @@ import time
 # from src.qdrant.client import QdrantClientWrapper
 # from src.qdrant.push_data import load_data
 from src.api.schemas import *
-from src.azure_client.azure_search import full_text_search, vector_search, hybrid_search, search_by_tag
+from src.azure_client.azure_search import (
+    text_search_with_semantic_cache,
+    full_text_search, 
+    vector_search, 
+    hybrid_search, 
+    search_by_tag
+    )
 from src.azure_client.azure_recommend import handle_recommendations
+from src.cache.cache_client import text_search_cache, hybrid_search_cache
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -58,11 +65,16 @@ async def vector_search_api(request: SearchRequest):
 
 # Endpoint for full text search using Qdrant payload filtering
 @app.post("/search/text", response_model=SearchResponse)
-async def text_search_api(request: SearchRequest):
+async def text_search_api(request: SearchRequestTextCache):
     try:
         start_time = time.time()
 
-        result = full_text_search(request.query, request.limit)
+        result = text_search_with_semantic_cache(
+            request.query,
+            text_search_cache.cache,
+            top_k=request.limit,
+            threshold=request.threshold
+        )
 
         elapsed = time.time() - start_time
         logger.info(f"[TEXT SEARCH] Query: '{request.query}' | Time: {elapsed:.3f} s")
@@ -70,7 +82,7 @@ async def text_search_api(request: SearchRequest):
     except Exception as e:
         logger.error(f"Error in full text search: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
-
+    
 @app.post("/search/hybrid", response_model=SearchResponseHybrid)
 async def hybrid_search_api(request: SearchRequest):
     try:

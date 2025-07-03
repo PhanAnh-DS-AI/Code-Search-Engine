@@ -9,11 +9,15 @@ from enum import Enum
 from typing import Tuple, List
 from datetime import timedelta, date
 from langchain_core.messages import get_buffer_string
+import logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # ===== PATH SETUP =====
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# from langchain_mistralai import ChatMistralAI
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate, PromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
@@ -23,6 +27,7 @@ from src.llm.utils import github_text_search, format_example_for_prompt
 # ===== ENV =====
 load_dotenv()
 GROQ_API_KEY = os.environ.get('GROQ_API_KEY')
+MISTRAL_API_KEY = os.environ.get('MISTRAL_API_KEY')
 
 # ===== PREPROCESS QUERY =====
 def preprocess_query(query: str) -> str:
@@ -213,9 +218,31 @@ def run_batch(json_file_path: str):
 
     return results
 
-# ===== MANUAL TESTING =====
-if __name__ == "__main__":
-    query = "Azure AI search engine with python and pytorch more than 100 stars in 2024"
+# ===== PROMPT: AGENT INTENT QUERY FOR CACHE =====
+def agent_intent_query(query: str) -> dict:
+    """
+    Calls LLM to extract intent and reasoning from a query.
+    Returns a dict with 'intent' and 'reasoning' fields.
+    """
+    prompt = ChatPromptTemplate.from_messages([
+        SystemMessagePromptTemplate(
+            prompt=PromptTemplate.from_file(os.path.join(BASE_DIR, "prompt_helpers", "agent_intent_query.txt"), encoding="utf-8")
+        ),
+        HumanMessagePromptTemplate(
+            prompt=PromptTemplate.from_template("Given the input query: {query}")
+        )
+    ])
+    
+    # llm_agent = ChatMistralAI(
+    #     api_key=MISTRAL_API_KEY,
+    #     model_name="mistral-small-latest",
+    #     temperature=0.5,
+    #     max_tokens=256,
+    #     top_p=0.95
+    # )
+    
+    chain = prompt | llm | parser
+    result = chain.invoke({"query": query})
+    return result
 
-    query_related, result = llm_preprocess(query)
-    print("Print Result:", result)
+

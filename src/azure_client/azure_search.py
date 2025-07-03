@@ -5,6 +5,8 @@ from src.llm.llm_helpers import llm_preprocess, query_generate_related
 from src.llm.utils import filter_results
 from src.azure_client.boosted_score import sort_results_by_boosted_score
 from src.azure_client.config import index_search_field, index_name,  search_client, model
+from src.cache.cache_client import text_search_cache, hybrid_search_cache
+from src.cache.utils import *
 from azure.search.documents.models import VectorizedQuery
 from typing import List
 import re
@@ -24,14 +26,14 @@ def get_field_index(exclude: List[str] = ["vector", "id"]) -> List[str]:
         if getattr(f, "retrievable", True) and f.name not in exclude_set
     ]
 
-
+# # ======== FULL TEXT SEARCH ========
 def full_text_search(query: str, top_k: int = 50):
-    _, parse_query = llm_preprocess(query)
+    # _, parse_query = llm_preprocess(query)
     # print(f"Parsed query: {parse_query}")
 
-    final_query = parse_query.get("rewritten_query") or query
+    # final_query = parse_query.get("rewritten_query") or query
     results = search_client.search(
-        search_text=final_query, 
+        search_text=query, 
         top=top_k,
         select= get_field_index()
         )
@@ -41,6 +43,69 @@ def full_text_search(query: str, top_k: int = 50):
          results_return.append(result)
 
     return results_return
+
+## ======== FULL TEXT SEARCH WITH CACHE ========
+def text_search_with_semantic_cache(query, cache, top_k=50, threshold=0.8):
+    """
+    Perform text search with semantic cache.
+    If cache hit, return cached result. If miss, query DB and cache the result.
+    """
+    _, llm_result = llm_preprocess(query)
+    rewritten_query = llm_result.get("rewritten_query") or query
+    intent_str, query_vector, reasoning = get_intent_and_vector(rewritten_query)
+    result = find_in_cache(query_vector, cache, threshold=threshold)
+    logger.info(f"Checking result in cache: {result}")
+
+    if result is not None:
+        cached_result, sim = result
+    else:
+        cached_result, sim = None, None
+
+    logger.info(f"Similarity score: {sim}")
+    logger.info(f"Cache result: {cached_result}")
+
+    if cached_result:
+        print("Cache hit!")
+        return cached_result
+    else:
+        print("Cache miss. Querying DB...")
+        results = search_client.search(
+            search_text=query, 
+            top=top_k,
+            select= get_field_index()
+            )
+        results_return = []
+
+        for result in results:
+            results_return.append(result)
+            
+        cache[query_vector] = results_return
+        
+        # # Debug cache info after adding
+        # try:
+        #     num_repos = len(results_return)
+        # except Exception:
+        #     try:
+        #         num_repos = len(list(results_return))
+        #     except Exception:
+        #         num_repos = "unknown"
+        # print(
+        #     f"Key (intent vector, first 5 dims) AFTER CACHE MISS: {query_vector[:5]}... | length: {len(query_vector)} | Num repos: {num_repos}")
+        
+        # # DEbug total repos in cache
+        # print("\n===== DEBUG: TOTAL REPOS IN CACHE AFTER CACHE MISS ======")
+        # total_repos = 0
+        # for v in cache.values():
+        #     try:
+        #         total_repos += len(v)
+        #     except Exception:
+        #         try:
+        #             total_repos += len(list(v))
+        #         except Exception:
+        #             pass
+        # print(f"Total repos in all cache values: {total_repos}")
+        
+        return results_return
 
 
 def vector_search(query: str, top_k: int = 50):
@@ -73,7 +138,6 @@ def hybrid_search(query: str, top_k: int = 50):
     topics = filters.get("topics", [])
     query_vector_required = parse_query.get("query_vector_required", True)
 
-    # Query vector search
     if query_vector_required:
         vector_embedding = model.encode(search_text_rewritten).tolist()
         # Hybrid Search function
@@ -123,6 +187,34 @@ def hybrid_search(query: str, top_k: int = 50):
         "suggest_topic": topics
     }
 
+def hybrid_search_with_semantic_cache(query, cache, top_k=50, threshold=0.8):
+    query = normalize_query(query)
+    _, parse_query = llm_preprocess(query)
+    rewritten_query = parse_query.get("rewritten_query") or query
+    intent_str, query_vector, reasoning = get_intent_and_vector(rewritten_query)
+    filters = parse_query.get("filters", {})
+    topics = filters.get("topics", [])
+    query_vector_required = parse_query.get("query_vector_required", True)
+    
+    if query_vector_required:
+        result = find_in_cache(query_vector, cache, threshold=threshold)
+        logger.info(f"Checking result in cache: {result}")
+
+        if result is not None:
+            cached_result, sim = result
+        else:
+            cached_result, sim = None, None
+
+        logger.info(f"Similarity score: {sim}")
+        logger.info(f"Cache result: {cached_result}")
+
+        if cached_result:
+            print("Cache hit!")
+            return cached_result
+        else:
+            print("Cache miss. Querying DB...")
+    
+    pass
 
 def search_by_tag(tag: str, top_k: int = 50) -> list[dict]:
     """s
@@ -148,10 +240,21 @@ def search_by_tag(tag: str, top_k: int = 50) -> list[dict]:
 
     return ranked_results
 
-# if __name__ == "__main__":
-#     user_query = "Azure AI search engine with python and pytorch more than 100 stars in 2024"
-    # print("\n🔍 Full-text Search:")
-    # print(full_text_search(user_query))
+if __name__ == "__main__":
+    from pprint import pprint
+
+    query_1 = "Azure AI search engine with python and pytorch more than 100 stars in 2024"
+    query_2 = "Machine Learning with Azure AI"
+    query_3 = "JavaScript libraries for data visualization"
+    print("\n--- First run ---")
+    result_1 = text_search_with_semantic_cache(query_1, text_search_cache.cache, top_k= 5)
+    pprint(result_1)
+
+    print("\n--- Second run ---")
+    result_2 = text_search_with_semantic_cache(query_3, text_search_cache.cache, top_k= 5)
+    pprint(result_2)
+
+
 
     # print("\n🧠 Vector Search:")
     # print(vector_search(user_query))

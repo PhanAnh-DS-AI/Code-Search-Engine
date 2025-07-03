@@ -19,6 +19,12 @@ class SearchHybridAndTagResponse(BaseModel):
 class SearchRequest(BaseModel):
     query: str
     limit: int = 5
+    
+class SearchRequestTextCache(BaseModel):
+    query: str
+    limit: int = 50
+    threshold: float = 0.8
+
 
 class SearchResponseHybrid(BaseModel):
     result: List[Dict[str, Any]]

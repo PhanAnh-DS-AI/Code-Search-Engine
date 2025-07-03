@@ -18,3 +18,6 @@ class BaseCache:
 
     def clear(self):
         self.cache.clear()
+
+text_search_cache = BaseCache()
+hybrid_search_cache = BaseCache()
