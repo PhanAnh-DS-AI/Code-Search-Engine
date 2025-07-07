@@ -8,7 +8,7 @@ from pydantic import BaseModel
 from enum import Enum
 from typing import Tuple, List
 from datetime import timedelta, date
-from langchain_core.messages import get_buffer_string
+from  openai import AzureOpenAI
 import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -38,9 +38,12 @@ def preprocess_query(query: str) -> str:
     return query
 
 # ===== CONFIG LLM =====
+if not GROQ_API_KEY:
+    raise ValueError("GROQ_API_KEY environment variable is required")
+
 llm = ChatGroq(
     api_key=GROQ_API_KEY,
-    model_name="llama-3.1-8b-instant",  
+    model="llama-3.1-8b-instant",  
     temperature=0.5
 )
 
@@ -170,7 +173,15 @@ def evaluate_rewrite(original_query: str, rewritten_query: str) -> Tuple[bool, s
     })
 
     try:
-        parsed = json.loads(result.content)  
+        # Handle different types of result.content
+        if isinstance(result.content, str):
+            parsed = json.loads(result.content)  
+        elif isinstance(result.content, list):
+            # If it's a list, try to get the first string element
+            content_str = next((item for item in result.content if isinstance(item, str)), "")
+            parsed = json.loads(content_str) if content_str else {"label": False, "reason": "Invalid response format"}
+        else:
+            parsed = {"label": False, "reason": f"Unexpected content type: {type(result.content)}"}
         return parsed["label"], parsed["reason"]
     except Exception as e:
         return False, f"LLM evaluation failed: {str(e)}"
@@ -246,3 +257,106 @@ def agent_intent_query(query: str) -> dict:
     return result
 
 
+
+def llm_generate_shortdes(repo_name: str, repo_topics=None, repo_readme: str = "") -> str:
+    """
+    Generate a short English description for a GitHub repository using Groq.
+    Returns JSON format with 'short_des' field.
+    """
+    # Create a comprehensive prompt for better description generation
+    prompt = f"""
+You are an expert at analyzing GitHub repositories and creating concise, informative descriptions.
+
+Given the following repository information, generate a short, engaging description that explains what the repository does and its main purpose.
+
+Repository Information:
+- Name: {repo_name}
+- Topics: {', '.join(repo_topics) if repo_topics else 'None specified'}
+- README Preview: {repo_readme[:800] if repo_readme else 'No README available'}
+
+Requirements:
+1. Create a description that is 1-2 sentences long (max 200 characters)
+2. Focus on the main functionality and purpose
+3. Use clear, technical language
+4. Make it engaging for developers
+5. If no README is available, infer from the name and topics
+
+Return ONLY a JSON object with this exact format:
+{{
+    "short_des": "Your generated description here"
+}}
+
+Example output:
+{{
+    "short_des": "A modern code editor built with TypeScript for building and debugging web applications."
+}}
+"""
+    
+    try:
+        if not GROQ_API_KEY:
+            raise ValueError("GROQ_API_KEY not available")
+            
+        # Use Groq for description generation
+        groq_llm = ChatGroq(
+            api_key=GROQ_API_KEY,
+            model="llama-3.1-8b-instant",
+            temperature=0.3  # Lower temperature for more consistent output
+        )
+        
+        # Get response from Groq
+        response = groq_llm.invoke(prompt)
+        
+        # Handle different response formats
+        if hasattr(response, 'content'):
+            content = response.content
+            # Handle case where content might be a list
+            if isinstance(content, list):
+                content = str(content)
+        else:
+            content = str(response)
+        
+        # Parse JSON response
+        try:
+            # Clean up the response if it contains markdown code blocks
+            content = content.strip()
+            if content.startswith('```json'):
+                content = content[7:]
+            if content.endswith('```'):
+                content = content[:-3]
+            content = content.strip()
+            
+            # Parse JSON
+            result = json.loads(content)
+            
+            # Extract short_des field
+            if 'short_des' in result:
+                return result['short_des']
+            else:
+                logger.warning(f"Response missing 'short_des' field: {result}")
+                return f"Repository: {repo_name}"
+                
+        except json.JSONDecodeError as e:
+            logger.warning(f"Failed to parse JSON response: {e}. Response: {content}")
+            # Fallback: try to extract description from response
+            if isinstance(content, str) and 'short_des' in content:
+                # Try to extract the value after "short_des":
+                import re
+                match = re.search(r'"short_des":\s*"([^"]+)"', content)
+                if match:
+                    return match.group(1)
+            
+            # Last resort fallback
+            return f"Repository: {repo_name}"
+        
+    except Exception as e:
+        logger.error(f"Groq description generation failed: {e}")
+        return f"Repository: {repo_name}"
+
+if __name__ == "__main__":
+    short_des = llm_generate_shortdes(
+    repo_name="awesome-semantic-search",
+    repo_topics=["semantic search", "vector database"],
+    repo_readme="This repo contains code and docs for semantic search using Qdrant and Azure AI..."
+)
+
+    print(short_des)

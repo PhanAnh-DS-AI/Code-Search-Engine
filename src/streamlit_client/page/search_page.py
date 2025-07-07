@@ -141,16 +141,15 @@ def display_result(result):
     if isinstance(payload, list):
         payload = payload[0] if payload else {}
 
-    meta = payload.get("meta_data", {})
     title = payload.get("title", "No Title")
-    url = meta.get("url", "#")
+    url = payload.get("url", "#")
     description = payload.get("short_des", "")
     tags = payload.get("tags", [])
-    owner = meta.get("owner", "N/A")
-    stars = meta.get("stars", 0)
+    owner = payload.get("owner", "N/A")
+    stars = payload.get("stars", 0)
     date = payload.get("date", "N/A")
-    score = result.get("score", 0)
-
+    score = payload.get("final_score", 0)
+    
     tag_html = "".join([
         f"<a href='?search_query={quote(tag)}&search_method=tag' class='tag'>#{tag}</a>"
         for tag in tags if tag.strip().lower() != "(none)"
@@ -168,6 +167,12 @@ def display_result(result):
     </div>
     """
     st.markdown(card_html, unsafe_allow_html=True)
+
+def get_field(doc, field):
+    # Prefer meta_data, fallback to top-level
+    if "meta_data" in doc and field in doc["meta_data"]:
+        return doc["meta_data"][field]
+    return doc.get(field, None)
 
 # ================== MAIN ===================
 st.header("🔍 Search Engine")
@@ -259,15 +264,15 @@ if st.session_state.get("search_submitted", False):
 
     if active_filter and raw_results:
         if active_filter == "Most Starred":
-            raw_results = sorted(raw_results, key=lambda r: r.get("meta_data", {}).get("stars", 0), reverse=True)
+            raw_results = sorted(raw_results, key=lambda r: get_field(r, "stars"), reverse=True)
         elif active_filter == "Fewest Starred":
-            raw_results = sorted(raw_results, key=lambda r: r.get("meta_data", {}).get("stars", 0))
+            raw_results = sorted(raw_results, key=lambda r: get_field(r, "stars"))
         elif active_filter == "Recently Updated":
-            raw_results = sorted(raw_results, key=lambda r: r.get("date", ""), reverse=True)
+            raw_results = sorted(raw_results, key=lambda r: get_field(r, "date"), reverse=True)
         elif active_filter == "Oldest Repos":
-            raw_results = sorted(raw_results, key=lambda r: r.get("date", ""))
+            raw_results = sorted(raw_results, key=lambda r: get_field(r, "date"))
         elif active_filter == "Most Relevant":
-            raw_results = sorted(raw_results, key=lambda r: r.get("score", 0), reverse=True)
+            raw_results = sorted(raw_results, key=lambda r: get_field(r, "score"), reverse=True)
 
     st.caption(f"🔍 Search completed in {elapsed_ms} ms.")
 

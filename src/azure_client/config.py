@@ -13,7 +13,9 @@ search_key = os.getenv("AZURE_AI_SEARCH_KEY")
 index_name = os.getenv("AZURE_AI_SEARCH_INDEX")
 index_github = os.getenv("AZURE_AI_SEARCH_GITHUB")
 
-# Search Client
+
+if not search_endpoint or not search_key or not index_name or not index_github:
+    raise ValueError("Missing required environment variables: AZURE_AI_SEARCH_ENDPOINT, AZURE_AI_SEARCH_KEY, or AZURE_AI_SEARCH_INDEX")
 
 search_client = SearchClient(
     endpoint=search_endpoint,
@@ -23,8 +25,8 @@ search_client = SearchClient(
 )
 
 index_search_field = SearchIndexClient(
-    endpoint = search_endpoint,
-    credential = AzureKeyCredential(search_key),
+    endpoint=search_endpoint,
+    credential=AzureKeyCredential(search_key),
 )
 
 # Github example client

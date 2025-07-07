@@ -150,12 +150,11 @@ def recommendation_result(result: dict):
     title = payload.get("title") or payload.get("repo_name") or "No Title"
     description = payload.get("short_des") or payload.get("description") or ""
     tags = payload.get("tags") or result.get("tags", [])
-    meta = payload.get("meta_data", {})  
-    url = meta.get("url", "#")
-    owner = meta.get("owner", "N/A")
-    stars = meta.get("stars", 0)
+    url = payload.get("url", "#")
+    owner = payload.get("owner", "N/A")
+    stars = payload.get("stars", 0)
     date = payload.get("date") or result.get("date", "N/A")
-    score = result.get("score", 0)
+    # score = result.get("score", 0)
 
     tag_html = "".join([
         f"<span style='background-color:#e8f0fe; color:#1967d2; border-radius:16px; padding:4px 12px; margin-right:5px; font-size:13px; display:inline-block; margin-top:4px;'>#{tag}</span>"

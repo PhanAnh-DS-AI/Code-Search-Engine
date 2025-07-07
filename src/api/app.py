@@ -65,15 +65,15 @@ async def vector_search_api(request: SearchRequest):
 
 # Endpoint for full text search using Qdrant payload filtering
 @app.post("/search/text", response_model=SearchResponse)
-async def text_search_api(request: SearchRequestTextCache):
+async def text_search_api(request: SearchRequest):
     try:
         start_time = time.time()
 
-        result = text_search_with_semantic_cache(
+        result = full_text_search(
             request.query,
-            text_search_cache.cache,
+            # text_search_cache.cache,
             top_k=request.limit,
-            threshold=request.threshold
+            # threshold=request.threshold
         )
 
         elapsed = time.time() - start_time

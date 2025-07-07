@@ -10,20 +10,15 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-# --- Pydantic models ---
-
-class MetaData(BaseModel):
-    stars: Optional[int]
-    owner: Optional[str]
-    url: Optional[str]
-    id: Optional[int]
-
 class RepoDoc(BaseModel):
     title: Optional[str]
     short_des: Optional[str]
     tags: Optional[List[str]]
     date: Optional[str]
-    meta_data: Optional[MetaData]
+    stars: Optional[int]
+    owner: Optional[str]
+    url: Optional[str]
+    id: Optional[int]
     score: Optional[float]
 
 class RecommendationResponse(BaseModel):
@@ -33,87 +28,46 @@ class RecommendationResponse(BaseModel):
     suggested_filters: List[str]
     limit: int
 
-# --- Helper functions ---
-
-def flatten_metadata(doc: dict) -> dict:
-    new_doc = dict(doc)
-    meta = doc.get("meta_data", {})
-    if isinstance(meta, dict):
-        new_doc["meta_data"] = {
-            "stars": meta.get("stars", 0),
-            "owner": meta.get("owner", ""),
-            "url": meta.get("url", ""),
-            "id": meta.get("id", None)
-        }
-    new_doc["score"] = doc.get("@search.score", 0.0)
-    return new_doc  
-
 # --- Search logic ---
-
-# def search_with_sort(top: int, sort_fields: List[str]) -> List[RepoDoc]:
-#     try:
-#         results = search_client.search(search_text="*", top=4500)
-#         docs = [RepoDoc(**flatten_metadata(doc)) for doc in results]
-
-#         logger.info(f"[search_with_sort] Retrieved {len(docs)} documents before sorting.")
-
-#         for field in reversed(sort_fields):
-#             docs.sort(key=lambda x: getattr(x, field, 0) or 0, reverse=True)
-
-#         for doc in docs[:top]:
-#             stars = doc.meta_data.stars if doc.meta_data and doc.meta_data.stars is not None else "N/A"
-#             logger.info(f"  -> {doc.title} | stars: {stars}")
-
-#         return docs[:top]
-#     except Exception as e:
-#         logger.error(f"Error in search_with_sort: {e}")
-#         return []
 
 def search_with_sort(top: int, sort_fields: List[str]) -> List[RepoDoc]:
     try:
-        results = search_client.search(search_text="*")
-        docs = [RepoDoc(**flatten_metadata(doc)) for doc in results]
+        # Compose order_by string for Azure Search
+        order_by = [f"{field} desc" for field in sort_fields]
+        # print(f"[DEBUG] order_by: {order_by}")
 
-        logger.info(f"[search_with_sort] Retrieved {len(docs)} documents before sorting.")
+        results = list(search_client.search(search_text="*", top=top, order_by=order_by))
+        # print(f"[DEBUG] Raw results from Azure Search:")
+        # for doc in results:
+        #     print(doc)
 
-        for field in reversed(sort_fields):
-            if field == "stars":
-                docs.sort(key=lambda x: (x.meta_data.stars if x.meta_data and x.meta_data.stars is not None else 0), reverse=True)
-            else:
-                docs.sort(key=lambda x: getattr(x, field, 0) or 0, reverse=True)
-
-        for doc in docs[:top]:
-            stars = doc.meta_data.stars if doc.meta_data and doc.meta_data.stars is not None else "N/A"
+        docs = [RepoDoc(**doc) for doc in results]
+        
+        logger.info(f"[search_with_sort] Retrieved {len(docs)} documents (sorted in Azure Search).")
+        for doc in docs:
+            # print(f"[DEBUG] RepoDoc: {doc.model_dump()}")
+            stars = doc.stars if doc.stars is not None else "N/A"
             logger.info(f"  -> {doc.title} | stars: {stars}")
-
-        return docs[:top]
+        return docs
     except Exception as e:
+        import traceback
         logger.error(f"Error in search_with_sort: {e}")
+        print("[DEBUG] Exception occurred in search_with_sort:")
+        traceback.print_exc()
         return []
-    
 
 def search_with_sort_and_date_filter(top: int, from_date: str, sort_fields: List[str]) -> List[RepoDoc]:
     try:
         filter_expr = f"date ge {from_date}"
-        logger.info(f"[search_with_sort_and_date_filter] filter_expr = {filter_expr}, Type = {type(filter_expr)}")
-
-        results = search_client.search(search_text="*", filter=filter_expr)
-        docs = [RepoDoc(**flatten_metadata(doc)) for doc in results]
-
-        logger.info(f"[search_with_sort_and_date_filter] Retrieved {len(docs)} results")
-
-        for field in reversed(sort_fields):
-            if field == "stars":
-                docs.sort(key=lambda x: (x.meta_data.stars if x.meta_data and x.meta_data.stars is not None else 0), reverse=True)
-            else:
-                docs.sort(key=lambda x: getattr(x, field, 0) or 0, reverse=True)
-
-        for doc in docs[:top]:
-            stars = doc.meta_data.stars if doc.meta_data and doc.meta_data.stars is not None else "N/A"
+        order_by = [f"{field} desc" for field in sort_fields]
+        logger.info(f"[search_with_sort_and_date_filter] filter_expr = {filter_expr}, order_by = {order_by}")
+        results = search_client.search(search_text="*", filter=filter_expr, top=top, order_by=order_by)
+        docs = [RepoDoc(**doc) for doc in results]
+        logger.info(f"[search_with_sort_and_date_filter] Retrieved {len(docs)} results (sorted in Azure Search)")
+        for doc in docs:
+            stars = doc.stars if doc.stars is not None else "N/A"
             logger.info(f"  -> {doc.title} | stars: {stars} | date: {doc.date}")
-
-        return docs[:top]
-
+        return docs
     except Exception as e:
         logger.error(f"Error in search_with_sort_and_date_filter: {e}")
         return []
@@ -122,17 +76,14 @@ def search_with_sort_and_date_filter(top: int, from_date: str, sort_fields: List
 def search_by_tag(tag: str, top: int) -> List[RepoDoc]:
     try:
         filter_expr = f"tags/any(t: t eq '{tag}')"
-        results = search_client.search(search_text="*", top=top, filter=filter_expr)
-
-        docs = [RepoDoc(**flatten_metadata(doc)) for doc in results]
-
-        logger.info(f"[search_by_tag] Tag '{tag}': found {len(docs)} documents.")
+        order_by = ["stars desc"]
+        results = search_client.search(search_text="*", top=top, filter=filter_expr, order_by=order_by)
+        docs = [RepoDoc(**doc) for doc in results]
+        logger.info(f"[search_by_tag] Tag '{tag}': found {len(docs)} documents (sorted in Azure Search).")
         for doc in docs:
-            stars = doc.meta_data.stars if doc.meta_data and doc.meta_data.stars is not None else "N/A"
+            stars = doc.stars if doc.stars is not None else "N/A"
             logger.info(f"  -> {doc.title} | stars: {stars} | score: {doc.score}")
-
         return docs
-
     except Exception as e:
         logger.error(f"Error in search_by_tag({tag}): {e}")
         return []
@@ -143,7 +94,8 @@ def search_by_tag(tag: str, top: int) -> List[RepoDoc]:
 def get_top_tags(size: int = 10) -> List[str]:
     try:
         results = search_client.search(search_text="*", facets=[f"tags,count:{size}"], top=0)
-        tags_facet = results.get_facets().get("tags", [])
+        facets = results.get_facets() if hasattr(results, 'get_facets') else None
+        tags_facet = facets.get("tags", []) if facets else []
         return [item["value"] for item in tags_facet if item["value"] != "(none)"]
     except Exception as e:
         logger.error(f"Error retrieving top tags: {e}")
@@ -213,8 +165,8 @@ if __name__ == "__main__":
     import pprint
     # recs = search_with_sort_and_date_filter( top=5, from_date="2025-01-01T00:00:00Z", sort_fields=["stars", "date"])
     # recs = search_with_sort(top=5,sort_fields=["stars"])
-    recs = handle_recommendations(limit=1)
-    pprint.pprint(recs)
+    recs = handle_recommendations(limit=10)
+    pprint.pprint(f"Recommendations Response:{recs}")
     # topics = ["machine learning", "web3", "frontend"]
     # topic_recs = {}
     # for topic in topics:

@@ -28,12 +28,12 @@ def get_field_index(exclude: List[str] = ["vector", "id"]) -> List[str]:
 
 # # ======== FULL TEXT SEARCH ========
 def full_text_search(query: str, top_k: int = 50):
-    # _, parse_query = llm_preprocess(query)
-    # print(f"Parsed query: {parse_query}")
+    _, parse_query = llm_preprocess(query)
+    print(f"Parsed query: {parse_query}")
 
-    # final_query = parse_query.get("rewritten_query") or query
+    final_query = parse_query.get("rewritten_query") or query
     results = search_client.search(
-        search_text=query, 
+        search_text=final_query, 
         top=top_k,
         select= get_field_index()
         )
@@ -244,21 +244,20 @@ if __name__ == "__main__":
     from pprint import pprint
 
     query_1 = "Azure AI search engine with python and pytorch more than 100 stars in 2024"
-    query_2 = "Machine Learning with Azure AI"
-    query_3 = "JavaScript libraries for data visualization"
-    print("\n--- First run ---")
-    result_1 = text_search_with_semantic_cache(query_1, text_search_cache.cache, top_k= 5)
-    pprint(result_1)
+    # query_2 = "Machine Learning with Azure AI"
+    # query_3 = "JavaScript libraries for data visualization"
+    # print("\n--- First run ---")
+    # result_1 = text_search_with_semantic_cache(query_1, text_search_cache.cache, top_k= 5)
+    # pprint(result_1)
 
-    print("\n--- Second run ---")
-    result_2 = text_search_with_semantic_cache(query_3, text_search_cache.cache, top_k= 5)
-    pprint(result_2)
+    # print("\n--- Second run ---")
+    # result_2 = text_search_with_semantic_cache(query_3, text_search_cache.cache, top_k= 5)
+    # pprint(result_2)
 
 
 
-    # print("\n🧠 Vector Search:")
-    # print(vector_search(user_query))
-    # from  pprint import pprint
+    pprint("\n🧠 Vector Search:")
+    pprint(full_text_search(query_1, top_k=5))
 
     # pprint("\n🔁 Hybrid Search:")
     # pprint(hybrid_search(user_query, top_k=1))
@@ -266,3 +265,4 @@ if __name__ == "__main__":
     # name = get_field_index()
     # print(name)
     
+  
