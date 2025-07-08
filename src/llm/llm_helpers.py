@@ -100,8 +100,8 @@ def llm_preprocess(query: str) -> Tuple[str, dict]:
     chain = prompt_method | llm | parser
     result = chain.invoke(input_vars)
 
-    # print("===== PROMPT INPUT TO LLM =====")
-    # print(formatted_prompt) 
+    print("===== PROMPT INPUT TO LLM =====")
+    print(formatted_prompt) 
     return query, result
 
 # ===== PROMPT: QUERY GENERATE RELATED =====
@@ -353,10 +353,10 @@ Example output:
         return f"Repository: {repo_name}"
 
 if __name__ == "__main__":
-    short_des = llm_generate_shortdes(
-    repo_name="awesome-semantic-search",
-    repo_topics=["semantic search", "vector database"],
-    repo_readme="This repo contains code and docs for semantic search using Qdrant and Azure AI..."
-)
-
-    print(short_des)
+#     short_des = llm_generate_shortdes(
+#     repo_name="awesome-semantic-search",
+#     repo_topics=["semantic search", "vector database"],
+#     repo_readme="This repo contains code and docs for semantic search using Qdrant and Azure AI..."
+# )
+    result = llm_preprocess("Azure AI search engine with python and pytorch more than 100 stars in 2024")
+    print(result)

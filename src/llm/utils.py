@@ -1,5 +1,6 @@
 import os
 import sys
+import json
 from datetime import datetime
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 from src.azure_client.config import github_ex_client, model
@@ -25,7 +26,17 @@ def format_example_for_prompt(examples: List[Dict[str, Any]]) -> str:
     prompt_blocks = []
     
     for i, ex in enumerate(examples, start=1):
-        llm_output = ex.get("llm_output", {})
+        # Parse the JSON string from llm_output
+        llm_output_str = ex.get("llm_output", "{}")
+        try:
+            llm_output = json.loads(llm_output_str) if isinstance(llm_output_str, str) else llm_output_str
+        except json.JSONDecodeError:
+            print(f"⚠️ Failed to parse llm_output JSON for example {i}: {llm_output_str}")
+            llm_output = {}
+        
+        print(f"Parsed llm_output for example {i}:", llm_output)
+        
+        # Extract filters from the parsed llm_output
         filters = llm_output.get("filters", {})
 
         formatted_filters = "\n".join([
@@ -95,6 +106,13 @@ def suggest_filter(query: str):
         return {"related_queries": []}
     
 if __name__ == "__main__":
+    from pprint import pprint
     results = github_text_search(query="Ai machine learning")
+    print("Raw results:")
+    pprint(results)
+    
+    print("\n" + "="*50 + "\n")
+    
     formatted_prompt = format_example_for_prompt(results)
+    print("Formatted prompt:")
     print(formatted_prompt)

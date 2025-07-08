@@ -59,20 +59,26 @@ class CosmosToAzureSearchIndexer:
         if not all([AZURE_SEARCH_ENDPOINT, AZURE_SEARCH_KEY, COSMOS_ENDPOINT, COSMOS_KEY]):
             raise ValueError("Missing required environment variables: AZURE_SEARCH_ENDPOINT, AZURE_SEARCH_KEY, COSMOS_ENDPOINT, COSMOS_KEY")
         
-        self.use_github_container = use_github_container
-        
         # Set the appropriate index name and container name
         if custom_container and custom_index:
             self.index_name = custom_index
             self.container_name = custom_container
-            logger.info(f"🔧 Using custom container: {self.container_name} -> Index: {self.index_name}")
+            # Auto-detect if this is the github-examples-prompt container
+            if custom_container == CONTAINER_NAME_GITHUB:
+                self.use_github_container = True
+                logger.info(f"🔧 Auto-detected github-examples-prompt container: {self.container_name} -> Index: {self.index_name}")
+            else:
+                self.use_github_container = use_github_container
+                logger.info(f"🔧 Using custom container: {self.container_name} -> Index: {self.index_name}")
         elif use_github_container:
             self.index_name = AZURE_SEARCH_INDEX_GITHUB
             self.container_name = CONTAINER_NAME_GITHUB
+            self.use_github_container = True
             logger.info(f"🔧 Using GitHub container: {self.container_name} -> Index: {self.index_name}")
         else:
             self.index_name = AZURE_SEARCH_INDEX_NAME
             self.container_name = CONTAINER_NAME
+            self.use_github_container = False
             logger.info(f"🔧 Using default container: {self.container_name} -> Index: {self.index_name}")
         
         # Validate index name is not None
@@ -131,29 +137,18 @@ class CosmosToAzureSearchIndexer:
                     # Primary key
                     SimpleField(name="id", type=SearchFieldDataType.String, key=True),
                     
-                    # Searchable text fields
-                    SearchableField(name="title", type=SearchFieldDataType.String, 
-                                  analyzer_name="standard", searchable=True),
-                    SearchableField(name="description", type=SearchFieldDataType.String, 
-                                  analyzer_name="standard", searchable=True),
-                    SearchableField(name="content", type=SearchFieldDataType.String, 
-                                  analyzer_name="standard", searchable=True),
-                    SimpleField(name="tags", type=SearchFieldDataType.Collection(SearchFieldDataType.String)),
+                    # Query fields
+                    SearchableField(name="original_query", type=SearchFieldDataType.String, 
+                                  analyzer_name="standard", searchable=True, filterable=True, sortable=True, retrievable=True),
+                    SearchableField(name="rewritten_query", type=SearchFieldDataType.String, 
+                                  analyzer_name="standard", searchable=True, filterable=True, sortable=True, retrievable=True),
                     
-                    # Metadata fields
-                    SimpleField(name="date", type=SearchFieldDataType.String),
-                    SimpleField(name="stars", type=SearchFieldDataType.Int32),
-                    SimpleField(name="owner", type=SearchFieldDataType.String),
-                    SimpleField(name="url", type=SearchFieldDataType.String),
-                    SimpleField(name="language", type=SearchFieldDataType.String),
-                    SimpleField(name="category", type=SearchFieldDataType.String),
+                    # LLM output as JSON string to preserve structure
+                    SearchableField(name="llm_output", type=SearchFieldDataType.String, 
+                                  analyzer_name="standard", searchable=True, filterable=True, sortable=True, retrievable=True, facetable=True),
                     
-                    # Vector field for semantic search (384 dimensions for BAAI/bge-small-en-v1.5)
-                    SearchField(name="vector", type=SearchFieldDataType.Collection(SearchFieldDataType.Single), 
-                               vector_search_dimensions=384, vector_search_profile_name="default-profile"),
-                    
-                    # Score field
-                    SimpleField(name="score", type=SearchFieldDataType.Double)
+                    # Label field
+                    SimpleField(name="true_label", type=SearchFieldDataType.Boolean, retrievable=True, filterable=True, sortable=True, searchable=True)
                 ]
             else:
                 # Fields for default github-container (with vector field restored)
@@ -182,34 +177,41 @@ class CosmosToAzureSearchIndexer:
                     SimpleField(name="score", type=SearchFieldDataType.Double, filterable=True, sortable=True)
                 ]
             
-            # Create vector search configuration
-            vector_search = VectorSearch(
-                profiles=[
-                    VectorSearchProfile(
-                        name="default-profile",
-                        algorithm_configuration_name="default-algorithm"
-                    )
-                ],
-                algorithms=[
-                    HnswAlgorithmConfiguration(
-                        name="default-algorithm",
-                        kind="hnsw",
-                        parameters=HnswParameters(
-                            m=4,
-                            ef_construction=400,
-                            ef_search=500,
-                            metric="cosine"
+            # Create the index
+            if self.use_github_container:
+                # For github-examples-prompt container, no vector search needed
+                index = SearchIndex(
+                    name=str(self.index_name),
+                    fields=fields
+                )
+            else:
+                # For default github-container, include vector search configuration
+                vector_search = VectorSearch(
+                    profiles=[
+                        VectorSearchProfile(
+                            name="default-profile",
+                            algorithm_configuration_name="default-algorithm"
                         )
-                    )
-                ]
-            )
-            
-            # Create the index with vector search configuration
-            index = SearchIndex(
-                name=str(self.index_name),
-                fields=fields,
-                vector_search=vector_search
-            )
+                    ],
+                    algorithms=[
+                        HnswAlgorithmConfiguration(
+                            name="default-algorithm",
+                            kind="hnsw",
+                            parameters=HnswParameters(
+                                m=4,
+                                ef_construction=400,
+                                ef_search=500,
+                                metric="cosine"
+                            )
+                        )
+                    ]
+                )
+                
+                index = SearchIndex(
+                    name=str(self.index_name),
+                    fields=fields,
+                    vector_search=vector_search
+                )
             
             self.index_client.create_index(index)
             logger.info(f"✅ Search index '{self.index_name}' created successfully")
@@ -300,27 +302,22 @@ class CosmosToAzureSearchIndexer:
                         logger.info(f"  {key}: {type(value).__name__} = {str(value)[:50]}")
             if self.use_github_container:
                 # Transform for github-examples-prompt container
+                logger.info(f"🔍 Using github-examples-prompt transformation for document {doc_id}")
+                llm_output = cosmos_doc.get('llm_output', {})
+                filters = llm_output.get('filters', {})
+                
                 search_doc = {
                     'id': str(cosmos_doc.get('id', '')),
-                    'title': str(cosmos_doc.get('title', '')),
-                    'description': str(cosmos_doc.get('description', '')),
-                    'content': str(cosmos_doc.get('content', '')),
-                    'tags': self._ensure_list(cosmos_doc.get('tags')),
-                    'date': str(cosmos_doc.get('date', '')),
-                    'stars': int(cosmos_doc.get('stars', 0)),
-                    'owner': str(cosmos_doc.get('owner', '')),
-                    'url': str(cosmos_doc.get('url', '')),
-                    'language': str(cosmos_doc.get('language', '')),
-                    'category': str(cosmos_doc.get('category', '')),
-                    'vector': self._ensure_vector(cosmos_doc.get('vector')),
-                    'score': self._ensure_float(cosmos_doc.get('score'))
+                    'original_query': str(cosmos_doc.get('original_query', '')),
+                    'rewritten_query': str(cosmos_doc.get('rewritten_query', '')),
+                    'llm_output': json.dumps(cosmos_doc.get('llm_output', {}), ensure_ascii=False),
+                    'true_label': bool(cosmos_doc.get('true_label', False))
                 }
                 
                 # Remove any fields that are not in the search index schema
                 # Only keep the fields that are defined in the index
                 allowed_fields = {
-                    'id', 'title', 'description', 'content', 'tags', 'date', 'stars', 
-                    'owner', 'url', 'language', 'category', 'vector', 'score'
+                    'id', 'original_query', 'rewritten_query', 'llm_output', 'true_label'
                 }
                 search_doc = {k: v for k, v in search_doc.items() if k in allowed_fields}
                 
@@ -334,6 +331,7 @@ class CosmosToAzureSearchIndexer:
                             logger.info(f"  {key}: {type(value).__name__} = {str(value)[:50]}")
             else:
                 # Transform for default github-container
+                logger.info(f"🔍 Using default github-container transformation for document {doc_id}")
                 meta_data = cosmos_doc.get('meta_data', {})
                 search_doc = {
                     'id': str(cosmos_doc.get('id', meta_data.get('id', ''))),
@@ -369,7 +367,7 @@ class CosmosToAzureSearchIndexer:
             search_doc = self._validate_document_types(search_doc)
             
             # Validate required fields
-            if not search_doc['id'] or not search_doc['title']:
+            if not search_doc['id']:
                 logger.warning(f"⚠️ Skipping document with missing required fields: {search_doc.get('id', 'unknown')}")
                 return None
             
@@ -426,6 +424,9 @@ class CosmosToAzureSearchIndexer:
                     cleaned_doc[key] = int(value) if value is not None else 0
                 except (ValueError, TypeError):
                     cleaned_doc[key] = 0
+            elif key == 'true_label':
+                # Boolean field
+                cleaned_doc[key] = bool(value) if value is not None else False
             else:
                 # All other fields should be strings
                 if value is None:
@@ -481,12 +482,18 @@ class CosmosToAzureSearchIndexer:
                     # Debug: Check for any problematic data types in the batch
                     for i, doc in enumerate(batch):
                         for key, value in doc.items():
-                            if isinstance(value, list) and key not in ['tags', 'vector']:
-                                logger.error(f"❌ Found unexpected list in field '{key}' in document {i}: {value[:5]}")
-                            elif value is None and key in ['id', 'title']:
-                                logger.error(f"❌ Found None value in required field '{key}' in document {i}")
-                            elif isinstance(value, (dict, list)) and key not in ['tags', 'vector']:
-                                logger.error(f"❌ Found complex type {type(value).__name__} in field '{key}' in document {i}: {str(value)[:100]}")
+                            if self.use_github_container:
+                                # For github-examples-prompt container, only check for required fields
+                                if value is None and key in ['id']:
+                                    logger.error(f"❌ Found None value in required field '{key}' in document {i}")
+                            else:
+                                # For default github-container, check for expected fields
+                                if isinstance(value, list) and key not in ['tags', 'vector']:
+                                    logger.error(f"❌ Found unexpected list in field '{key}' in document {i}: {value[:5]}")
+                                elif value is None and key in ['id', 'title']:
+                                    logger.error(f"❌ Found None value in required field '{key}' in document {i}")
+                                elif isinstance(value, (dict, list)) and key not in ['tags', 'vector']:
+                                    logger.error(f"❌ Found complex type {type(value).__name__} in field '{key}' in document {i}: {str(value)[:100]}")
                     
                     # Debug: Log the actual JSON being sent to Azure AI Search
                     if batch_num == 1 and batch:
