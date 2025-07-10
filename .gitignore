@@ -9,3 +9,6 @@ wheels/
 env
 # Virtual environments
 .venv
+
+# .gitignore
+azure-app-functions/local.settings.json

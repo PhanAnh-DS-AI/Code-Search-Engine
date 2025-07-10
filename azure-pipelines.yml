@@ -1,0 +1,33 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  acrName: '<your-acr-name>'
+  backendImage: 'my-azure-func-app'
+  frontendImage: 'my-streamlit-app'
+
+steps:
+- task: AzureCLI@2
+  displayName: 'Build and Push Backend Image'
+  inputs:
+    azureSubscription: '<your-service-connection-name>'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az acr login --name $(acrName)
+      docker build -f azure-app-functions/function_image.dockerfile -t $(acrName).azurecr.io/$(backendImage):$(Build.BuildId) ./azure-app-functions
+      docker push $(acrName).azurecr.io/$(backendImage):$(Build.BuildId)
+
+- task: AzureCLI@2
+  displayName: 'Build and Push Frontend Image'
+  inputs:
+    azureSubscription: '<your-service-connection-name>'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az acr login --name $(acrName)
+      docker build -t $(acrName).azurecr.io/$(frontendImage):$(Build.BuildId) ./src/streamlit_client
+      docker push $(acrName).azurecr.io/$(frontendImage):$(Build.BuildId) 

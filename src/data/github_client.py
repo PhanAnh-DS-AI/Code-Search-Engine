@@ -113,34 +113,34 @@ class GithubClient:
             for query in queries:
                 logger.info(f"🔍 Searching query: {query}")
                 page = 0
-                query_repos = 0
-                
-                while True:
-                    try:
-                        results = self.client.search_repositories(query=query, sort="updated", order="desc")
-                        repos = results.get_page(page)
-                    except GithubException as e:
-                        logger.warning(f"⚠️  Search failed for query '{query}': {e}")
-                        break
+                uery_repos = 0
+                    
+            while True:
+                try:
+                    results = self.client.search_repositories(query=query, sort="updated", order="desc")
+                    repos = results.get_page(page)
+                except GithubException as e:
+                    logger.warning(f"⚠️  Search failed for query '{query}': {e}")
+                    break
 
-                    if not repos:
-                        logger.info(f"ℹ️  No more repos found for query '{query}'")
-                        break
+                if not repos:
+                    logger.info(f"ℹ️  No more repos found for query '{query}'")
+                    break
 
-                    for repo in repos:
-                        if repo.id not in seen:
-                            all_repos.append(repo)
-                            seen.add(repo.id)
-                            query_repos += 1
-                        if len(all_repos) >= max_repos:
-                            logger.info(f"✅ Collected {max_repos} unique repos.")
-                            pbar.update(1)
-                            return all_repos
+                for repo in repos:
+                    if repo.id not in seen:
+                        all_repos.append(repo)
+                        seen.add(repo.id)
+                        query_repos += 1
+                    if len(all_repos) >= max_repos:
+                        logger.info(f"✅ Collected {max_repos} unique repos.")
+                        pbar.update(1)
+                        return all_repos
 
-                    page += 1
-                    if page >= 10:
-                        logger.info(f"⏭️  Reached max page limit for query '{query}'")
-                        break
+                page += 1
+                if page >= 10:
+                    logger.info(f"⏭️  Reached max page limit for query '{query}'")
+                    break
                 
                 pbar.set_postfix({"repos": query_repos, "total": len(all_repos)})
                 pbar.update(1)
@@ -346,29 +346,29 @@ if __name__ == "__main__":
     #     Path(resume_file).unlink()
     #     print("🧹 Cleaned up checkpoint file")
     
-    from azure.cosmos import CosmosClient
-    from src.data.push_azure_cosmosdb import COSMOS_ENDPOINT, COSMOS_KEY, DATABASE_NAME, CONTAINER_NAME
+    # from azure.cosmos import CosmosClient
+    # from src.data.push_azure_cosmosdb import COSMOS_ENDPOINT, COSMOS_KEY, DATABASE_NAME, CONTAINER_NAME
     
-    # Check if environment variables are set
-    if not COSMOS_ENDPOINT or not COSMOS_KEY:
-        print("❌ COSMOS_ENDPOINT and COSMOS_KEY environment variables are required")
-        exit(1)
+    # # Check if environment variables are set
+    # if not COSMOS_ENDPOINT or not COSMOS_KEY:
+    #     print("❌ COSMOS_ENDPOINT and COSMOS_KEY environment variables are required")
+    #     exit(1)
     
-    try:
-        # Initialize client with proper credential handling
-        cosmos_endpoint = str(COSMOS_ENDPOINT)
-        cosmos_key = str(COSMOS_KEY)
+    # try:
+    #     # Initialize client with proper credential handling
+    #     cosmos_endpoint = str(COSMOS_ENDPOINT)
+    #     cosmos_key = str(COSMOS_KEY)
         
-        client = CosmosClient(cosmos_endpoint, cosmos_key)
-        database = client.get_database_client(DATABASE_NAME)
-        container = database.get_container_client(CONTAINER_NAME)
+    #     client = CosmosClient(cosmos_endpoint, cosmos_key)
+    #     database = client.get_database_client(DATABASE_NAME)
+    #     container = database.get_container_client(CONTAINER_NAME)
 
-        # Count documents
-        query = "SELECT VALUE COUNT(1) FROM c"
-        count = list(container.query_items(query=query, enable_cross_partition_query=True))[0]
+    #     # Count documents
+    #     query = "SELECT VALUE COUNT(1) FROM c"
+    #     count = list(container.query_items(query=query, enable_cross_partition_query=True))[0]
 
-        print(f"✅ Total items in container: {count}")
+    #     print(f"✅ Total items in container: {count}")
         
-    except Exception as e:
-        print(f"❌ Error connecting to CosmosDB: {e}")
-        print("Please check your COSMOS_ENDPOINT and COSMOS_KEY environment variables")
+    # except Exception as e:
+    #     print(f"❌ Error connecting to CosmosDB: {e}")
+    #     print("Please check your COSMOS_ENDPOINT and COSMOS_KEY environment variables")

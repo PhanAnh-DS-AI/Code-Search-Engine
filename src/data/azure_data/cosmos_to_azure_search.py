@@ -153,35 +153,35 @@ class CosmosToAzureSearchIndexer:
             else:
                 # Fields for default github-container (with vector field restored)
                 fields = [
-                    # Primary key
-                    SimpleField(name="id", type=SearchFieldDataType.String, key=True),
-                    
-                    # Searchable text fields
-                    SearchableField(name="title", type=SearchFieldDataType.String, 
+                # Primary key
+                SimpleField(name="id", type=SearchFieldDataType.String, key=True),
+                
+                # Searchable text fields
+                SearchableField(name="title", type=SearchFieldDataType.String, 
                                   analyzer_name="standard", searchable=True, filterable=True, sortable=True),
-                    SearchableField(name="short_des", type=SearchFieldDataType.String, 
+                SearchableField(name="short_des", type=SearchFieldDataType.String, 
                                   analyzer_name="standard", searchable=True, filterable=True, sortable=True),
                     SimpleField(name="tags", type=SearchFieldDataType.Collection(SearchFieldDataType.String), filterable=True, searchable=True, facetable=True),
-                    
-                    # Metadata fields
+                
+                # Metadata fields
                     SimpleField(name="date", type=SearchFieldDataType.DateTimeOffset, filterable=True, sortable=True, searchable=True),
                     SimpleField(name="stars", type=SearchFieldDataType.Int32, filterable=True, sortable=True),
                     SimpleField(name="owner", type=SearchFieldDataType.String, filterable=True, sortable=True, searchable=True),
                     SimpleField(name="url", type=SearchFieldDataType.String, filterable=True, sortable=True, searchable=True),
-                    
-                    # Vector field for semantic search (384 dimensions for BAAI/bge-small-en-v1.5)
-                    SearchField(name="vector", type=SearchFieldDataType.Collection(SearchFieldDataType.Single), 
+                
+                # Vector field for semantic search (384 dimensions for BAAI/bge-small-en-v1.5)
+                SearchField(name="vector", type=SearchFieldDataType.Collection(SearchFieldDataType.Single), 
                                vector_search_dimensions=384, vector_search_profile_name="default-profile"),
-                    
-                    # Score field
+                
+                # Score field
                     SimpleField(name="score", type=SearchFieldDataType.Double, filterable=True, sortable=True)
-                ]
+            ]
             
             # Create the index
             if self.use_github_container:
                 # For github-examples-prompt container, no vector search needed
                 index = SearchIndex(
-                    name=str(self.index_name),
+                        name=str(self.index_name),
                     fields=fields
                 )
             else:
@@ -260,16 +260,16 @@ class CosmosToAzureSearchIndexer:
                     if transformed_doc:
                         batch.append(transformed_doc)
                         count += 1
+                    
+                    # Yield batch when it reaches the batch size
+                    if len(batch) >= batch_size:
+                        yield batch
+                        batch = []
                         
-                        # Yield batch when it reaches the batch size
-                        if len(batch) >= batch_size:
-                            yield batch
-                            batch = []
-                            
                 except Exception as e:
                     logger.warning(f"⚠️ Failed to transform document {doc.get('id', 'unknown')}: {e}")
                     continue
-            
+                
             # Yield any remaining documents in the last batch
             if batch:
                 yield batch
@@ -335,16 +335,16 @@ class CosmosToAzureSearchIndexer:
                 meta_data = cosmos_doc.get('meta_data', {})
                 search_doc = {
                     'id': str(cosmos_doc.get('id', meta_data.get('id', ''))),
-                    'title': str(cosmos_doc.get('title', '')),
-                    'short_des': str(cosmos_doc.get('short_des', '')),
-                    'tags': self._ensure_list(cosmos_doc.get('tags')),
-                    'date': str(cosmos_doc.get('date', '')),
-                    'stars': int(cosmos_doc.get('stars', meta_data.get('stars', 0))),
-                    'owner': str(cosmos_doc.get('owner', meta_data.get('owner', ''))),
-                    'url': str(cosmos_doc.get('url', meta_data.get('url', ''))),
-                    'vector': self._ensure_vector(cosmos_doc.get('vector')),
-                    'score': self._ensure_float(cosmos_doc.get('score'))
-                }
+                        'title': str(cosmos_doc.get('title', '')),
+                        'short_des': str(cosmos_doc.get('short_des', '')),
+                        'tags': self._ensure_list(cosmos_doc.get('tags')),
+                        'date': str(cosmos_doc.get('date', '')),
+                        'stars': int(cosmos_doc.get('stars', meta_data.get('stars', 0))),
+                        'owner': str(cosmos_doc.get('owner', meta_data.get('owner', ''))),
+                        'url': str(cosmos_doc.get('url', meta_data.get('url', ''))),
+                        'vector': self._ensure_vector(cosmos_doc.get('vector')),
+                        'score': self._ensure_float(cosmos_doc.get('score'))
+                    }
                 
                 # Remove any fields that are not in the search index schema
                 # Only keep the fields that are defined in the index

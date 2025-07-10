@@ -3,11 +3,12 @@ import logging
 import time
 import streamlit as st
 from typing import List, Dict, Any, Tuple, Callable
+import os
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-BASE_URL = ("http://localhost:8080")
+BASE_URL = os.getenv("BACKEND_URL", "http://localhost:8080")
 
 def call_vector_search(query: str, limit: int = 25) -> Tuple[List[Dict[str, Any]], int]:
     try:
